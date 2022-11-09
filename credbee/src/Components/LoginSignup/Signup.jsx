@@ -3,9 +3,9 @@ import { Box, Typography, styled, lineHeight, TextField, Checkbox, FormGroup, Fo
 
 const LeftBox = styled(Box)`
 
-    width: 480px;
-    heigth: 550px;
-
+     width: 480px;
+     heigth: 550px;
+     
 `;
 
 const RightBox = styled(Box)`
@@ -40,6 +40,11 @@ const DP = styled("img")({
 const ClientCompanyImg = styled("img")({
     width: "150px",
     marginTop: "20px"
+})
+
+const LastCustomerImage = styled("img")({
+    marginLeft: "140px",
+    marginTop: "40px"
 })
 
 const Signup = () => {
@@ -77,11 +82,12 @@ const Signup = () => {
                     <FormGroup style={{ marginTop: "20px", color: "#818181" }} >
                         <FormControlLabel control={<Checkbox />} label="I want to be notified about the awesome happenings* at Chargebee " />
                     </FormGroup>
-                    <Button variant="contained" style={{ padding: "20px", width: "200px", marginTop: "20px", background: "#500AD2" }} >Complete Signup</Button>
+                    <Button variant="contained" style={{ padding: "20px", width: "200px", marginTop: "20px", background: "#500AD2" }} >Complete Signup →</Button>
                     <Typography style={{ marginTop: "35px", color: "#818181" }} >By clicking on Complete Signup, you agree to our Terms and you acknowledge having
                         <br></br> read our Privacy Notice</Typography>
                     <Typography style={{ marginTop: "10px", fontSize: "15px", color: "#818181" }} >*This includes periodic newsletters, emails about usage tips, billing practices, and other communications. You can opt out anytime within the app. </Typography>
                 </SignupSection>
+                <LastCustomerImage src="https://webstatic.chargebee.com/assets/web/535/images/signup/customers/chargebee-customers.svg"></LastCustomerImage>
             </RightBox>
         </Box>
     )
