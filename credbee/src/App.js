@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Customers from './Components/Customers/Customers';
 import Signup from './Components/LoginSignup/Signup';
