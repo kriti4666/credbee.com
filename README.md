@@ -6,6 +6,6 @@ Its a group project and we are working on ChargeBee.com
 ### Team-mates
 1. kriti Kumari
 2. Nimish M.S
-3. Gunjan Kunthe
+3. Gunjan Kuthe
 4. Arnab Pal
-5. Shubham Kumar Ram
+5. Subham Kumar Ram
