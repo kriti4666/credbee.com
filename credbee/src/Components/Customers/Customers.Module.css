@@ -1,0 +1,90 @@
+
+
+.c-head {
+    width: 100%;
+    height: auto;
+    background-color: rgba(245, 237, 237, 0.995);
+}
+
+.c-head > h1 {
+    text-align: left;
+    padding: 3rem;
+}
+
+.c-head >div{
+    display: flex;
+    gap: 2rem;
+    padding: 3rem;
+    margin-top: -5rem;
+}
+
+.c-head >div > div:nth-child(1) {
+    padding: 0px 10px;
+    border: 1px solid red;
+    font-weight: bold;
+}
+.c-head >div > div:nth-child(2) {
+    color: blue;
+    font-weight: bold;
+}
+
+.c-headBox {
+    width: 80%;
+    height: auto;
+    padding: 5rem;
+    display: flex;
+    gap: 2rem;
+    margin: auto;
+    
+}
+
+.leftBox {
+    flex: 1;
+    text-align: left;
+    /* border: 1px solid red; */
+}
+
+.leftBox > div {
+    display: flex;
+    gap: 1rem;
+}
+.leftBox > div > img {
+    width: 30px;
+    border-radius: 50%;
+}
+
+.rightBox {
+    flex: 1;
+    padding: 2rem;
+    background-color: rgba(38, 8, 231, 0.747);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+/* .rightBox > p {
+    text-align: center;
+} */
+.rightBox > span {
+    color: red;
+    text-align: left;
+
+}
+
+.c-row {
+    padding-top: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+    width: 80%;
+    /* border: 1px solid red; */
+    margin: auto;
+    
+}
+
+.c-row img {
+    width: 100px;
+}
+
+.c-youtube {
+    padding: 3rem 0rem;
+    margin: auto;
+}
+
