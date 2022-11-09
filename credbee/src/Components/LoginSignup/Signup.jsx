@@ -1,14 +1,13 @@
-import { Box, Typography, styled, lineHeight, TextField, Checkbox, FormGroup, FormControlLabel, Button } from "@mui/material"
+import { Box, Typography, styled, TextField, Checkbox, FormGroup, FormControlLabel, Button, Grid } from "@mui/material"
 
 
-const LeftBox = styled(Box)`
+const LeftBox = styled(Grid)`
 
-     width: 480px;
+    //  width: 480px;
      heigth: 550px;
-     
 `;
 
-const RightBox = styled(Box)`
+const RightBox = styled(Grid)`
 
     // border: 1px solid black;
     width: 800px;
@@ -50,12 +49,20 @@ const LastCustomerImage = styled("img")({
 const Signup = () => {
 
     return (
-        <Box style={{ display: "flex" }}>
-            <LeftBox>
+        <Grid style={{ display: "flex" }}>
+            <LeftBox sx={{
+                width: {
+                    xs: 0,
+                    sm: 0,
+                    md: 0,
+                    lg: 480
+                }
+
+            }} >
                 <Box style={{ background: "#B4B4B4", textAlign: "center", height: 340 }}>
                     <DP src="https://webstatic.chargebee.com/assets/web/535/images/signup/customers/dailius-wilson-getaccept.png"></DP>
                 </Box>
-                <Box style={{ background: "#38039A", color: "white", textAlign: "center", height: "100px" }}>
+                <Box style={{ background: "#38039A", color: "white", textAlign: "center", height: "100px", }}>
                     <Typography style={{ fontSize: "30px", fontWeight: "930", lineHeight: 3 }} >Dailius Wilson</Typography>
                     <Typography style={{ lineHeight: -90, marginTop: -25, fontWeight: "200" }}>VP Sales & Growth</Typography>
                 </Box>
@@ -89,7 +96,7 @@ const Signup = () => {
                 </SignupSection>
                 <LastCustomerImage src="https://webstatic.chargebee.com/assets/web/535/images/signup/customers/chargebee-customers.svg"></LastCustomerImage>
             </RightBox>
-        </Box>
+        </Grid>
     )
 
 }
