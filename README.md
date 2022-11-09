@@ -1,7 +1,7 @@
 # smooth-flavor-1645
 Its a group project and we are working on ChargeBee.com
 
-### Project Name - CreadBee
+### Project Name - CredBee
 
 ### Team-mates
 1. kriti Kumari
