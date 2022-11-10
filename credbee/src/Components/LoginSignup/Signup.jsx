@@ -90,14 +90,14 @@ const Signup = () => {
                     <Typography style={{ fontSize: "20px", marginTop: "10px", fontWeight: "600" }}>Login →</Typography>
                 </Box>
 
-                <Typography style={{ fontSize: "20px", fontWeight: "600", marginTop: "40px", }} >Create Your Sandbox Account </Typography>
+                <Typography style={{ fontSize: "20px", fontWeight: "600", marginTop: "40px", marginRight: 500 }} >Create Your Sandbox Account </Typography>
 
                 <SignupSection style={{ height: 480, marginTop: "10px" }}>
-                    <Typography style={{ color: "#818181", fontSize: "20px", fontWeight: "600" }} >Work email</Typography>
-                    <TextField style={{ marginTop: "10px", width: "700px" }} variant="outlined" label='Enter Email' />
-                    <Typography style={{ color: "#818181", marginTop: "30px", fontSize: "20px", fontWeight: "600" }}>Phone Number</Typography>
+                    <Typography style={{ color: "#818181", fontSize: "20px", fontWeight: "600", marginRight: 590 }} >Work email</Typography>
+                    <TextField style={{ marginTop: "10px", width: "700px", }} variant="outlined" label='Enter Email' />
+                    <Typography style={{ color: "#818181", marginTop: "30px", fontSize: "20px", fontWeight: "600", marginRight: 550 }}>Phone Number</Typography>
                     <TextField style={{ marginTop: "10px", width: "700px" }} variant="outlined" label='Enter Phonenumber' />
-                    <FormGroup style={{ marginTop: "20px", color: "#818181" }} >
+                    <FormGroup style={{ marginTop: "20px", color: "#818181" , marginLeft: 12 }} >
                         <FormControlLabel control={<Checkbox />} label="I want to be notified about the awesome happenings* at Chargebee " />
                     </FormGroup>
                     <Button variant="contained" style={{ padding: "20px", width: "200px", marginTop: "20px", background: "#500AD2" }} >Complete Signup →</Button>
