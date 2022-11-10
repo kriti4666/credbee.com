@@ -1,7 +1,9 @@
 import styled from "styled-components";
+import { down } from "styled-breakpoints";
 
 export const HeroWrapper = styled.div`
   @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;500;700&display=swap");
+  font-size: 62.5%;
 
   .heroContainer {
     text-align: left;
@@ -17,7 +19,7 @@ export const HeroWrapper = styled.div`
   .heroSection {
     width: 60vw;
     margin: auto;
-    padding-top: 100px;
+    padding-top: 150px;
     padding-bottom: 20px;
   }
   .header {
@@ -52,24 +54,72 @@ export const HeroWrapper = styled.div`
   .priceOptionBtns {
     display: flex;
     margin: 60px 0;
-    gap:60px;
+    justify-content: center;
     flex-direction: row;
+    gap: 30px;
+    flex-wrap: wrap;
   }
-  .planSummaryContainer{
-    display: flex;
-    gap:10px;
+  .planSummaryContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
   }
-  .planSummaryCard{
-    padding: 10px;
-    color:white;
-}
 
-.planSumName{
+  .planSummaryCard {
+    padding: 10px;
+    color: white;
+  }
+
+  .planSumName {
     font-size: 3.5em;
   }
-  .planSumDesc{
+  .planSumDesc {
     font-size: 1.4em;
     font-weight: 400;
+  }
 
+  ${down("xxl")} {
+    .heroSection {
+      width: 75vw;
+    }
+  }
+  ${down("lg")} {
+    .heroSection {
+      width: 75vw;
+    }
+    .header {
+      font-size: 4.8em;
+    }
+    .subHeader {
+      font-size: 1.6em;
+    }
+    .btnTalk {
+      display: none;
+    }
+    .planSummaryContainer {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  ${down("md")} {
+    .heroSection {
+      width: 75vw;
+      text-align: center;
+    }
+    .header {
+      font-size: 3.2em;
+    }
+    .subHeader {
+      justify-content: center;
+      font-size: 1.2em;
+    }
+    .planSummaryContainer{
+      display:none;
+    }
+  }
+  ${down("sm")}{
+    .heroSection{
+      width: 85vw;
+      padding-top: 100px;
+    }
   }
 `;
