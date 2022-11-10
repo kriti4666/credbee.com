@@ -1,0 +1,52 @@
+
+.p-head {
+    display: flex;
+    background-color: blueviolet;
+    color: white;
+    justify-content: space-evenly;
+    font-family: var(--ff_primary);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 15px;
+}
+
+.p-box {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    gap: 3rem;
+    color: white;
+    background: linear-gradient( 100.96deg, #4300A3 33.34%, #6100BB 71.36%, #A700F1 104.8% );
+    /* border: 1px solid red; */
+}
+
+.p-left {
+    flex: 1;
+    padding-top: 10rem;
+    text-align: left;
+    padding: 3rem;
+}
+
+.p-left >button {
+    border-radius: 10px;
+    border: none;
+    background-color: #6100BB;
+    color: white;
+    
+}
+
+.p-left :nth-child(2) {
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.p-right {
+    flex: 1;
+    padding: 5rem;
+}
+
+.p-right > div {
+    padding: 3rem;
+    border: 1px solid;
+    background-color: white;
+    color: black;
+}
+
