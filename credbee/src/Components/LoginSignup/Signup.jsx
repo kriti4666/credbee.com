@@ -51,6 +51,7 @@ const LastCustomerImage = styled("img")({
 const SignupInit = {
     email: "",
     phone: "",
+    password: "",
 }
 
 
@@ -89,7 +90,7 @@ const Signup = () => {
                 <Box sx={{
                     background: "#B4B4B4",
                     textAlign: "center",
-                    height: 340,
+                    height: 400,
                 }} >
                     <DP src="https://webstatic.chargebee.com/assets/web/535/images/signup/customers/dailius-wilson-getaccept.png"></DP>
                 </Box>
@@ -126,7 +127,7 @@ const Signup = () => {
 
                 <Typography style={{ fontSize: "20px", fontWeight: "600", marginTop: "40px", marginRight: 500 }} >Create Your Sandbox Account </Typography>
 
-                <SignupSection style={{ height: 480, marginTop: "10px" }}>
+                <SignupSection style={{ height: 600, marginTop: "10px" }}>
                     <Typography style={{ color: "#818181", fontSize: "20px", fontWeight: "600", marginRight: 590 }} >Work email</Typography>
                     <TextField
                         style={{ marginTop: "10px", width: "700px", }}
@@ -144,6 +145,15 @@ const Signup = () => {
                         name="phone"
                         onChange={(e) => onInputChange(e)}
                         value={signup.phone}
+                    />
+                    <Typography style={{ color: "#818181", marginTop: "30px", fontSize: "20px", fontWeight: "600", marginRight: 600 }}>Password</Typography>
+                    <TextField
+                        style={{ marginTop: "10px", width: "700px" }}
+                        variant="outlined"
+                        label='Enter Password'
+                        name="password"
+                        onChange={(e) => onInputChange(e)}
+                        value={signup.password}
                     />
                     <FormGroup style={{ marginTop: "20px", color: "#818181", marginLeft: 12 }} >
                         <FormControlLabel control={<Checkbox />} label="I want to be notified about the awesome happenings* at Chargebee " />
