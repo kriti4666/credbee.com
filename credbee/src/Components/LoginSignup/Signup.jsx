@@ -1,5 +1,7 @@
 import { Box, Typography, styled, TextField, Checkbox, FormGroup, FormControlLabel, Button, Grid } from "@mui/material"
+import { useState } from "react";
 
+import { authenticateSignup } from "../API/signupAPI";
 
 const LeftBox = styled(Grid)`
     width: 480px;
@@ -44,10 +46,37 @@ const LastCustomerImage = styled("img")({
     marginTop: "40px"
 })
 
+//signup init value
+
+const SignupInit = {
+    email: "",
+    phone: "",
+}
+
+
 const Signup = () => {
+
+    const [signup, setSignup] = useState(SignupInit);
+
+    const onInputChange = (e) => {
+        // console.log(e.target.value);
+
+        setSignup({ ...signup, [e.target.name]: e.target.value })
+
+    };
+
+    const signupUser = async () => {
+        //sending the signup form state to the signup api
+        let res = await authenticateSignup(signup);
+        // alert("Sucessful");
+        setSignup(SignupInit)
+    }
 
     return (
         <Grid style={{ display: "flex" }}>
+
+            {/* Left side of the page start here */}
+
             <LeftBox sx={{
                 display: {
                     xs: 'none',
@@ -75,6 +104,11 @@ const Signup = () => {
 
                 </Box>
             </LeftBox>
+
+            {/* Left side of the page end here */}
+
+            {/* Right side of the page start here */}
+
             <RightBox
                 sx={{
                     width: {
@@ -94,19 +128,43 @@ const Signup = () => {
 
                 <SignupSection style={{ height: 480, marginTop: "10px" }}>
                     <Typography style={{ color: "#818181", fontSize: "20px", fontWeight: "600", marginRight: 590 }} >Work email</Typography>
-                    <TextField style={{ marginTop: "10px", width: "700px", }} variant="outlined" label='Enter Email' />
+                    <TextField
+                        style={{ marginTop: "10px", width: "700px", }}
+                        variant="outlined"
+                        label='Enter Email'
+                        name="email"
+                        onChange={(e) => onInputChange(e)}
+                        value={signup.email}
+                    />
                     <Typography style={{ color: "#818181", marginTop: "30px", fontSize: "20px", fontWeight: "600", marginRight: 550 }}>Phone Number</Typography>
-                    <TextField style={{ marginTop: "10px", width: "700px" }} variant="outlined" label='Enter Phonenumber' />
-                    <FormGroup style={{ marginTop: "20px", color: "#818181" , marginLeft: 12 }} >
+                    <TextField
+                        style={{ marginTop: "10px", width: "700px" }}
+                        variant="outlined"
+                        label='Enter Phonenumber'
+                        name="phone"
+                        onChange={(e) => onInputChange(e)}
+                        value={signup.phone}
+                    />
+                    <FormGroup style={{ marginTop: "20px", color: "#818181", marginLeft: 12 }} >
                         <FormControlLabel control={<Checkbox />} label="I want to be notified about the awesome happenings* at Chargebee " />
                     </FormGroup>
-                    <Button variant="contained" style={{ padding: "20px", width: "200px", marginTop: "20px", background: "#500AD2" }} >Complete Signup →</Button>
+                    <Button
+                        variant="contained"
+                        style={{ padding: "20px", width: "200px", marginTop: "20px", background: "#500AD2" }}
+                        onClick={() => signupUser()}
+                    >
+                        Complete Signup →
+                    </Button>
                     <Typography style={{ marginTop: "35px", color: "#818181" }} >By clicking on Complete Signup, you agree to our Terms and you acknowledge having
                         <br></br> read our Privacy Notice</Typography>
                     <Typography style={{ marginTop: "10px", fontSize: "15px", color: "#818181" }} >*This includes periodic newsletters, emails about usage tips, billing practices, and other communications. You can opt out anytime within the app. </Typography>
                 </SignupSection>
                 <LastCustomerImage src="https://webstatic.chargebee.com/assets/web/535/images/signup/customers/chargebee-customers.svg"></LastCustomerImage>
             </RightBox>
+
+            {/* Right side of the page end here */}
+
+
         </Grid>
     )
 
