@@ -30,7 +30,7 @@ const Logo = styled("img")({
 });
 
 const DP = styled("img")({
-    height: "290px",
+    height: "350px",
     width: "58%",
     marginTop: 50,
 
