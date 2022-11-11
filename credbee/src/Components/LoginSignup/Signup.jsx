@@ -68,7 +68,8 @@ const Signup = () => {
     const signupUser = async () => {
         //sending the signup form state to the signup api
         let res = await authenticateSignup(signup);
-        setSignup(" ")
+        // alert("Sucessful");
+        setSignup(SignupInit)
     }
 
     return (
@@ -133,6 +134,7 @@ const Signup = () => {
                         label='Enter Email'
                         name="email"
                         onChange={(e) => onInputChange(e)}
+                        value={signup.email}
                     />
                     <Typography style={{ color: "#818181", marginTop: "30px", fontSize: "20px", fontWeight: "600", marginRight: 550 }}>Phone Number</Typography>
                     <TextField
@@ -141,6 +143,7 @@ const Signup = () => {
                         label='Enter Phonenumber'
                         name="phone"
                         onChange={(e) => onInputChange(e)}
+                        value={signup.phone}
                     />
                     <FormGroup style={{ marginTop: "20px", color: "#818181", marginLeft: 12 }} >
                         <FormControlLabel control={<Checkbox />} label="I want to be notified about the awesome happenings* at Chargebee " />
