@@ -1,5 +1,5 @@
 export const PlanPricingData = [
-      {
+  {
     name: "Launch",
     description:
       "For early-stage startups that want to spend more time developing and less on manual operations.",
@@ -9,7 +9,7 @@ export const PlanPricingData = [
     benefits:
       "for your first USD 100k in revenue What happens when I hit USD 100k?",
     btnTitle: "Get started for free",
-    btnTitle_url: "https://www.chargebee.com/trial-signup/?ref=Launch",
+    btnTitle_url: "https://www..com/trial-signup/?ref=Launch",
     featuresTitle: "All you need to get started",
     featureDetails: [
       {
@@ -41,7 +41,7 @@ export const PlanPricingData = [
     billingPeriod: "billed annually",
     benefits: "includes USD 600K/yr revenue\n0.6% of overage revenue",
     btnTitle: "Schedule a demo",
-    btnTitle_url: "https://www.chargebee.com/schedule-a-demo/?ref=Rise",
+    btnTitle_url: "https://www..com/schedule-a-demo/?ref=Rise",
     featuresTitle: "Everything in Launch +",
     featureDetails: [
       {
@@ -73,7 +73,7 @@ export const PlanPricingData = [
     billingPeriod: "billed annually",
     benefits: "includes USD 1.2M/yr revenue 0.75% of overage revenue",
     btnTitle: "Schedule a demo",
-    btnTitle_url: "https://www.chargebee.com/schedule-a-demo/?ref=Scale",
+    btnTitle_url: "https://www..com/schedule-a-demo/?ref=Scale",
     featuresTitle: "Everything in Rise +",
     featureDetails: [
       {
@@ -99,8 +99,8 @@ export const PlanPricingData = [
       "For large businesses looking for enterprise-class compliance while diversifying revenue streams.",
     amount: "Custom",
     benefits: "Get a quote tailored to your requirements.",
-    btnTitle: "",
-    btnTitle_url: "https://www.chargebee.com/schedule-a-demo/?ref=Enterprise",
+    btnTitle: "Talk to Sales",
+    btnTitle_url: "https://www..com/schedule-a-demo/?ref=Enterprise",
     featuresTitle: "Everything in Scale +",
     featureDetails: [
       {
