@@ -1,14 +1,14 @@
 import './App.css';
 import AllRoutes from './Components/AllRoutes';
-import Login from './Components/LoginSignup/Login';
-import Signup from './Components/LoginSignup/Signup';
+import Customers from './Components/Customers/Customers';
+import Partners from './Components/Partners/Partners';
+
 
 function App() {
   return (
     <div className="App">
       <AllRoutes/>
-      <Login/>
-      <Signup/>
+      {/* <Customers/> */}
     </div>
   );
 }
