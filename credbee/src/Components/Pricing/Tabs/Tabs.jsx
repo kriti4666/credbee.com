@@ -10,6 +10,7 @@ export const Tab = styled.button`
     border-radius: 20px;
     border: none;
     padding: 0.5em 1.5em;
+    cursor: pointer;
     font-weight: 600;
     font-family: "IBM Plex Sans"
     font-size: 1.6em;

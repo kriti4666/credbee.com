@@ -4,10 +4,12 @@ import { HeroWrapper } from "./Hero.styles";
 import { Tab, Tabs } from "./Tabs/Tabs";
 import { PlanPricingData } from "./PlanPricingData";
 import { PricingDetailsWrapper } from "./PricingDetails.style";
+import { FormSectionWrapper } from "./FormSectionWrapper";
+import DemoForm from "./DemoForm/DemoForm";
 
 let data = PlanPricingData;
 
-const PricingPage = () => {
+const Pricing = () => {
   return (
     <div>
       {/* Navbar */}
@@ -39,7 +41,7 @@ const PricingPage = () => {
               </Tabs>
             </div>
             <div className="planSummaryContainer">
-              {data.map((e,i) => (
+              {data.map((e, i) => (
                 <div key={i} className="planSummaryCard">
                   <h1 className="planSumName">{e.name}</h1>
                   <h3 className="planSumDesc">{e.description}</h3>
@@ -52,39 +54,66 @@ const PricingPage = () => {
       <PricingDetailsWrapper>
         <div className="pricingContainer">
           <div className="pricingSection">
-            {data.map((e,i)=>(
-              <div className="pricingDetailsCard">
-                <h1 className= "planTitle">{e.name}</h1>
-                <span className="planDesc">{e.description}</span>
+            {data.map((e, i) => (
+              <div key={i} className="pricingDetailsCard">
+                <h1 className="planTitle">{e.name}</h1>
+                <p className="planDesc">{e.description}</p>
                 <div className="planMoney">
                   <div className="planCurrency">{e.currency}</div>
-                  <div className="planCost">{i!==3? `${e.amount}/mo` : e.amount}</div>
+                  <div className="planCost">
+                    {i !== 3 ? `${e.amount}/mo` : e.amount}
+                  </div>
                 </div>
                 <div className="billingPeriod">{e.billingPeriod}</div>
                 <div className="planBenefits">{e.benefits}</div>
                 <div className="CTABtn">
                   <span>{e.btnTitle}</span>
-                  <BsArrowRight style={{ width: "12px" }}/>
+                  <BsArrowRight className="pricingCTAArrow" />
                 </div>
-                <div className>{e.featuresTitle}</div>
+                <div className="featureTitle">{e.featuresTitle}</div>
                 <ul className="featuresList">
-                  {e.featureDetails.map((f,j)=>(
-                    <li className="listItem">{f.featureName}</li>
+                  {e.featureDetails.map((f, j) => (
+                    <li key={j} className="listItem">
+                      <img src="https://webstatic.chargebee.com/assets/web/536/images/pricings/check-gradient.svg" />
+                      <span>{f.featureName}</span>
+                    </li>
                   ))}
                 </ul>
               </div>
             ))}
           </div>
-          <div className="comparePlans">
-            <span>See how our plans compare</span>
-            <BsArrowRight style={{ width: "12px" }}/>
+          <div className="comparePlanWrapper">
+            <div className="comparePlans">
+              <p>See how our plans compare</p>
+              <BsArrowRight className="CPArrow" />
+            </div>
           </div>
-        </div>          
+        </div>
       </PricingDetailsWrapper>
+      <FormSectionWrapper>
+        <div className="formSectionContainer">
+          <div className="leftFormSection">
+            <h1>We've helped thousands of subscription businesses streamline their billing workflow</h1>
+            <img src="https://webstatic.chargebee.com/assets/web/536/images/pricings/arrow.svg"></img>
+            <p>Switching to Credbee has been a big upgrade for us. They are solving the problems we'd have a year from now.</p>
+            <div className="customerDetails">
+              <img src="https://webstatic.chargebee.com/assets/web/536/images/case-study/makespace/cto.png" />
+              <div className="customerName">
+                <h4>Matthew Busel</h4>
+                <p>Product Manager, MakeSpace</p>
+              </div>
+            </div>
+            <div className="companyLogos">
+            <img width={"115px"} height={"26px" }src="https://webstatic.chargebee.com/assets/web/536/images/case-study/getaccept/ga-logo-black.png" />
+            <img  width={"115px"} height={"26px" } src="https://webstatic.chargebee.com/assets/web/536/images/customers/logos/sharetribe.svg" />
+            <img  width={"115px"} height={"26px" }src="https://webstatic.chargebee.com/assets/web/536/images/case-study/userlane/userlane.png" />
+            </div>
+          </div>
+          <DemoForm></DemoForm>
+        </div>
+      </FormSectionWrapper>
     </div>
   );
 };
 
-export default PricingPage;
-
-
+export default Pricing;
