@@ -70,7 +70,7 @@ const Login = () => {
         <LoginSectionRightDiv>
           <Typography style={{ marginTop: "30px", fontSize: "20px", marginRight: "150px", color: "#6D6D71" }} >Sign in to Chargebee!</Typography>
           <TextField style={{ marginTop: "10px", width: "350px" }} variant="outlined" label='name@comapany.com' />
-          <TextField style={{ marginTop: "10px", width: "350px" }} variant="outlined" label='password' />
+          <TextField style={{ marginTop: "10px", width: "350px" }} variant="outlined" label='Phonenumber' />
           <Button variant="contained" style={{ padding: "10px", width: "170px", background: "#FF7846", margin: 18, marginRight: "190px" }} >Sign in</Button> <br></br>
           <Button variant="contained" style={{ padding: "20px", width: "220px", background: "#4285F4", marginRight: "120px" }} >Sign in with Google</Button>
           <Typography style={{ marginTop: 20, color: "blue" }} >Sign in with Single Sign-On</Typography>

@@ -9,6 +9,7 @@ import {
   Input,
   Select,
   SimpleGrid,
+  Skeleton,
   Stack,
   Text,
   VStack,
@@ -16,10 +17,12 @@ import {
 import {Box} from "@mui/system";
 import {useEffect} from "react";
 import {useState} from "react";
+import { LoadSkeleton } from "./LoadSkeleton";
 import {SingleUser} from "./SingleUser";
 import {usersData} from "./user";
 
 const Admin = () => {
+  const [loading,setLoading] = useState(false)
   const [allData, setAllData] = useState([]);
   const [state, setState] = useState([]);
   const [inputTag, setInputTag] = useState("");
@@ -59,8 +62,11 @@ const Admin = () => {
   };
 
   useEffect(() => {
-    setAllData(usersData);
-    setState(usersData);
+    setTimeout(()=>{
+      setAllData(usersData);
+      setState(usersData);
+      setLoading(true)
+    },2000)
   }, []);
 
   return (
@@ -170,9 +176,11 @@ const Admin = () => {
                 h="600px"
                 bg="#E2E8F0"
               >
-                {state.map((ele, i) => (
-                  <SingleUser key={i} data={ele} />
-                ))}
+                {loading ? (
+                  state.map((ele, i) => <SingleUser key={i} data={ele} />)
+                ) : (
+                  <LoadSkeleton />
+                )}
               </VStack>
             </VStack>
           </GridItem>

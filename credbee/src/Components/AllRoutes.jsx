@@ -13,7 +13,7 @@ import Signup from "./LoginSignup/Signup";
 const AllRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<Navbar />} />
+      {/* <Route path="/" element={<Navbar />} /> */}
       <Route path="/login" element={<Login />} />
       <Route path='/signup' element={<Signup/>}/>
       <Route path="/pricing" element={<Pricing />} />
