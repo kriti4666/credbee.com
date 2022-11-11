@@ -18,3 +18,4 @@ export const Connection = async (USERNAME, PASSWORD, DBNAME) => {
 }
 
 export default Connection   
+
