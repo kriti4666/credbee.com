@@ -10,6 +10,7 @@ const router = express.Router();
 router.post("/signup", UserSignup);
 router.post("/login", userLogin);
 router.post("/pricing", userDemoFrom);
+// router.get("/admin",getUsers)
 
 
 export default router;

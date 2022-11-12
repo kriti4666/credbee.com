@@ -63,3 +63,14 @@ export const userLogin = async (req, res) => {
         console.log(e.message);
     }
 }
+
+// export const getUsers =  async (req, res) => {
+//   try{
+//     const user = await User.find({});
+//     res.status(200).json(user)
+//     console.log(user)
+//   }
+//   catch(e){
+//     console.log(e.message)
+//   }
+// };
