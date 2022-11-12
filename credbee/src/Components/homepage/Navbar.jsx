@@ -5,15 +5,14 @@ import "./navbar.css"
 import Pricing from "./pricing";
 import Product from "./product";
 import UnderCons from "./underCons";
-import more from "./images/more.png"
-import { IconButton, Menu, MenuButton, MenuDivider, MenuItem, MenuList } from "@chakra-ui/react";
+import {Menu, MenuButton, MenuDivider, MenuItem, MenuList } from "@chakra-ui/react";
 
 export function Navbar() {
     return (
         <div className="NavbarDiv">
             <div className="firstHalf">
                 <div className="LogoDiv">
-                    <Link to="./"><img src={logoCred} alt="credLogo" /></Link>
+                    <Link to="/"><img src={logoCred} alt="credLogo" /></Link>
                     
                 </div>
                 <div className="more">
@@ -25,43 +24,43 @@ export function Navbar() {
                             borderRadius='md'
                             borderWidth='1px'
                             _hover={{ bg: 'gray.400' }}
-                            _expanded={{ bg: 'blue.400' }}
+                            _expanded={{ bg: 'blue.400'}}
                             _focus={{ boxShadow: 'outline' }}
                         >
                             Menu
                         </MenuButton>
                         <MenuList>
-                            <MenuItem><Link to="./Product">Product</Link></MenuItem>
-                            <MenuItem><Link to="./Pricing">Pricing</Link></MenuItem>
-                            <MenuItem><Link to="./Solution">Solution</Link></MenuItem>
-                            <MenuItem><Link to="Customers">Custumers</Link></MenuItem>
-                            <MenuItem><Link to="Partners">Partners</Link></MenuItem>
+                            <MenuItem><Link to="/Product">Product</Link></MenuItem>
+                            <MenuItem><Link to="/Pricing">Pricing</Link></MenuItem>
+                            <MenuItem><Link to="/Solution">Solution</Link></MenuItem>
+                            <MenuItem><Link to="/Customers">Custumers</Link></MenuItem>
+                            <MenuItem><Link to="/Partners">Partners</Link></MenuItem>
 
                             <MenuDivider />
                             <MenuItem>English</MenuItem>
-                            <MenuItem><Link to="Login">Login</Link></MenuItem>
-                            <MenuItem><Link to="Demo">Get a Demo</Link></MenuItem>
+                            <MenuItem><Link to="/Login">Login</Link></MenuItem>
+                            <MenuItem><Link to="/Demo">Get a Demo</Link></MenuItem>
                         </MenuList>
                     </Menu>
                 </div>
                 <div className="Navcontent">
                     <div className="dropdown">
-                        <span><Link to="./product">Products</Link></span>
+                        <span><Link to="/product">Products</Link></span>
                         <div className="dropdown-content">
                             <Product />
                         </div>
                     </div>
                     <div className="dropdown">
-                        <span><Link to="./pricing">Pricing</Link></span>
+                        <span><Link to="/pricing">Pricing</Link></span>
                     </div>
                     <div className="dropdown">
-                        <span><Link to="./Solution">Solution</Link></span>
+                        <span><Link to="/Solution">Solution</Link></span>
                         <div className="dropdown-content">
                             <Pricing />
                         </div>
                     </div>
                     <div className="dropdown">
-                        <span><Link to="./Customers">Customers</Link></span>
+                        <span><Link to="/Customers">Customers</Link></span>
                     </div>
                     <div className="dropdown">
                         <span>Resources</span>
@@ -70,7 +69,7 @@ export function Navbar() {
                         </div>
                     </div>
                     <div className="dropdown">
-                        <span><Link to="Partners">Partners</Link></span>
+                        <span><Link to="/Partners">Partners</Link></span>
                         <div className="dropdown-content">
                             <p>Hello World!</p>
                         </div>

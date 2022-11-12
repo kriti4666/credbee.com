@@ -2,6 +2,8 @@ import axios from "axios";
 import React, { useEffect } from "react";
 import { useState } from "react";
 import "../Customers/Customers.Module.css";
+import { Navbar } from "../homepage/Navbar";
+import "../homepage/navbar.css";
 
 const Customers = () => {
   const [data, setData] = useState([]);
@@ -25,6 +27,7 @@ const Customers = () => {
     <div className="customer">
       {/**********************             Top section            **********************/}
 
+      <Navbar/>
       <div className="c-head">
         <h1>
           Chargebee powers

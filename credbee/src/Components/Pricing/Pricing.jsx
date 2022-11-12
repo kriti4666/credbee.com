@@ -6,13 +6,14 @@ import { PlanPricingData } from "./PlanPricingData";
 import { PricingDetailsWrapper } from "./PricingDetails.style";
 import { FormSectionWrapper } from "./FormSectionWrapper";
 import DemoForm from "./DemoForm/DemoForm";
+import { Navbar } from "../homepage/Navbar";
 
 let data = PlanPricingData;
 
 const Pricing = () => {
   return (
     <div>
-      {/* Navbar */}
+      <Navbar/>
       <HeroWrapper>
         <div className="heroContainer">
           <div className="heroSection">

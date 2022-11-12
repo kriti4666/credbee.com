@@ -14,11 +14,11 @@ import {
 import React, { useState } from "react";
 import "../Partners/Partners.Module.css";
 import "../Partners/PartnersData";
-import { TiChevronRight } from "react-icons/ti"
 import { array } from "../Partners/PartnersData";
 import { logo2 } from "../Partners/PartnersData";
 import { logo3 } from "../Partners/PartnersData";
 import { logo4 } from "../Partners/PartnersData";
+import { Navbar } from "../homepage/Navbar";
 
 console.log(array);
 
@@ -31,6 +31,7 @@ const Partners = () => {
 
   return (
     <div className="partners">
+      <Navbar/>
       <Stack
         className="p-head"
         Show

@@ -3,17 +3,17 @@ import { Route, Routes } from "react-router-dom";
 import Admin from "./Admin/Admin";
 import Customers from "./Customers/Customers";
 import Demo from "./Demo/Demo";
-import Navbar from "./homepage/Navbar";
 import Login from "./LoginSignup/Login";
 import Partners from "./Partners/Partners";
 import Pricing from "./Pricing/Pricing";
 import { ChakraProvider } from "@chakra-ui/react";
 import Signup from "./LoginSignup/Signup";
+import FullPage from "./homepage/fullPage";
 
 const AllRoutes = () => {
   return (
     <Routes>
-      {/* <Route path="/" element={<Navbar />} /> */}
+      <Route path="/" element={<FullPage/>} />
       <Route path="/login" element={<Login />} />
       <Route path='/signup' element={<Signup/>}/>
       <Route path="/pricing" element={<Pricing />} />
