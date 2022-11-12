@@ -97,7 +97,9 @@ export const PlanPricingData = [
     name: "Enterprise",
     description:
       "For large businesses looking for enterprise-class compliance while diversifying revenue streams.",
+    currency: "USD",
     amount: "Custom",
+    billingPeriod: "billed annually",
     benefits: "Get a quote tailored to your requirements.",
     btnTitle: "Talk to Sales",
     btnTitle_url: "https://www..com/schedule-a-demo/?ref=Enterprise",
