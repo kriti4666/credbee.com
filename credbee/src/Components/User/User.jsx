@@ -7,9 +7,7 @@ import {
   GridItem,
   Img,
   SimpleGrid,
-  Skeleton,
   SkeletonCircle,
-  Stack,
   Text,
   VStack,
 } from "@chakra-ui/react";
@@ -32,8 +30,8 @@ const User = () => {
       <Center>
         <Grid
           templateColumns={{md: "repeat(3, 1fr)", base: "repeat(1, 1fr)"}}
-          w={{lg: "40%", md: "80%", base: "100%"}}
-          h="100%"
+          w={{lg: "60%", md: "80%", base: "100%"}}
+          h={{lg: "600px", md: "600px"}}
         >
           <GridItem colSpan={1}>
             <SimpleGrid
@@ -44,16 +42,18 @@ const User = () => {
               columns={1}
             >
               <Box>
-                <Flex
-                  alignItems="center"
-                  justifyContent="center"
-                  borderRadius={10}
-                  color="white"
-                  bg="#44337A"
-                  h="81"
-                >
-                  <Text fontSize={25}>CredBee</Text>
-                </Flex>
+                <a href="/">
+                  <Flex
+                    alignItems="center"
+                    justifyContent="center"
+                    borderRadius={10}
+                    color="white"
+                    bg="#44337A"
+                    h="81"
+                  >
+                    <Text fontSize={25}>CredBee</Text>
+                  </Flex>
+                </a>
                 <Grid
                   mt={2}
                   templateColumns={{
@@ -79,7 +79,7 @@ const User = () => {
             pt={5}
             colSpan={2}
           >
-            <VStack spacing={3}>
+            <VStack spacing={5}>
               <Center>
                 {loading ? (
                   <Box border="1px solid">
@@ -100,10 +100,10 @@ const User = () => {
                     justifyContent="space-around"
                   >
                     <Box width="150px">
-                      <Text fontSize={20}>Name :</Text>
+                      <Text fontSize={25}>Name :</Text>
                     </Box>
                     <Box textAlign="left" width="250px">
-                      <Text fontSize={20}>Gunjan Kuthe</Text>
+                      <Text fontSize={25}>Gunjan Kuthe</Text>
                     </Box>
                   </Flex>
                   <Flex
@@ -112,10 +112,10 @@ const User = () => {
                     justifyContent="space-around"
                   >
                     <Box width="150px">
-                      <Text fontSize={20}>Email :</Text>
+                      <Text fontSize={25}>Email :</Text>
                     </Box>
                     <Box textAlign="left" width="250px">
-                      <Text fontSize={20}>masai@gmail.com</Text>
+                      <Text fontSize={25}>masai@gmail.com</Text>
                     </Box>
                   </Flex>
                   <Flex
@@ -124,10 +124,10 @@ const User = () => {
                     justifyContent="space-around"
                   >
                     <Box width="150px">
-                      <Text fontSize={20}>Phone No. :</Text>
+                      <Text fontSize={25}>Phone No. :</Text>
                     </Box>
                     <Box textAlign="left" width="250px">
-                      <Text fontSize={20}>5415464564</Text>
+                      <Text fontSize={25}>5415464564</Text>
                     </Box>
                   </Flex>
                   <Flex
@@ -136,10 +136,10 @@ const User = () => {
                     justifyContent="space-around"
                   >
                     <Box width="150px">
-                      <Text fontSize={20}>Company :</Text>
+                      <Text fontSize={25}>Company :</Text>
                     </Box>
                     <Box textAlign="left" width="250px">
-                      <Text fontSize={20}>Masai</Text>
+                      <Text fontSize={25}>Masai</Text>
                     </Box>
                   </Flex>
                   <Flex
@@ -148,10 +148,10 @@ const User = () => {
                     justifyContent="space-around"
                   >
                     <Box width="150px">
-                      <Text fontSize={20}>Plan :</Text>
+                      <Text fontSize={25}>Plan :</Text>
                     </Box>
                     <Box textAlign="left" width="250px">
-                      <Text fontSize={20}>Gold axkbsxsa</Text>
+                      <Text fontSize={25}>Gold axkbsxsa</Text>
                     </Box>
                   </Flex>
                 </>
@@ -166,11 +166,5 @@ const User = () => {
   );
 };
 
-{/* <Stack w="100%" border="1px solid">
-                  <Skeleton height="40px" />
-                  <Skeleton height="40px" />
-                  <Skeleton height="40px" />
-                  <Skeleton height="40px" />
-                  <Skeleton height="40px" />
-                </Stack> */}
+
 export default User;
