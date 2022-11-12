@@ -9,7 +9,6 @@ import {
   Input,
   Select,
   SimpleGrid,
-  Skeleton,
   Stack,
   Text,
   VStack,
@@ -86,16 +85,18 @@ const Admin = () => {
               columns={1}
             >
               <Box>
-                <Flex
-                  alignItems="center"
-                  justifyContent="center"
-                  borderRadius={10}
-                  color="white"
-                  bg="#44337A"
-                  h="81"
-                >
-                  <Text fontSize={25}>CredBee</Text>
-                </Flex>
+                <a href="/">
+                  <Flex
+                    alignItems="center"
+                    justifyContent="center"
+                    borderRadius={10}
+                    color="white"
+                    bg="#44337A"
+                    h="81"
+                  >
+                    <Text fontSize={25}>CredBee</Text>
+                  </Flex>
+                </a>
                 <Grid
                   mt={2}
                   templateColumns={{
