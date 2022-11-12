@@ -67,7 +67,14 @@ const Login = () => {
 
   return (
     <Box style={{ background: "#EAEAF4", height: "700px" }}>
-      <LoginPageNav>
+      <LoginPageNav sx={{
+        display: {
+          xs: 'none',
+          sm: 'none',
+          md: 'none',
+          lg: 'flex'
+        }
+      }}>
         <LoginPageLogo src="https://d2jxbtsa1l6d79.cloudfront.net/static/app-static-assets/core/core-2.3.2/images/brand/cn-logotype-black.svg"></LoginPageLogo>
         <Box sx={{ display: "flex", marginTop: 5 }}>
           <Typography sx={{ fontStyle: "italic", color: "#7C7C81" }} >Don't have an account? </Typography>&nbsp;&nbsp;
@@ -80,9 +87,21 @@ const Login = () => {
 
         </Box>
       </LoginPageNav>
-      <LoginSection style={{ background: "white" }} >
+      <LoginSection style={{ background: "white" }} sx={{
+        width: {
+          sm: 500,
+          md: 820,
+          lg: 820
+        },
+      }}>
         <LoginSectionLeftDiv>
-          <img style={{ width: 100, marginRight: 300, marginTop: 30 }} src="https://d2jxbtsa1l6d79.cloudfront.net/static/app-static-assets/core/core-2.3.2/images/brand/cn-logotype-black.svg" alt="image1"></img>
+          <img
+            style={{ width: 100, marginRight: 300, marginTop: 30 }}
+            src="https://d2jxbtsa1l6d79.cloudfront.net/static/app-static-assets/core/core-2.3.2/images/brand/cn-logotype-black.svg"
+            alt="image1"
+          >
+
+          </img>
           <Typography sx={{ marginTop: 3, marginLeft: -2 }}>
             ANNOUNCING SUMMER 2022 PRODUCT RELEASE
           </Typography>
