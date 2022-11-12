@@ -50,15 +50,17 @@ const Login = () => {
 
   const [login, setLogin] = useState(loginInit);
   const [status, setStatus] = useState(false);
+  const [ toggle, setToggle ] = useState("")
 
   const onValueChange = (e) => {
     setLogin({ ...login, [e.target.name]: e.target.value })
   }
 
-  let res
+  let res, x
   const loginUser = async () => {
     res = await authenticateLogin(login);
-    console.log(res.data);
+    x = res.data;
+    console.log(x);
     if (res.status === 200) {
       setStatus(true)
     }
@@ -77,10 +79,10 @@ const Login = () => {
       }}>
         <LoginPageLogo src="https://d2jxbtsa1l6d79.cloudfront.net/static/app-static-assets/core/core-2.3.2/images/brand/cn-logotype-black.svg"></LoginPageLogo>
         <Box sx={{ display: "flex", marginTop: 5 }}>
-          <Typography sx={{ fontStyle: "italic", color: "#7C7C81" }} >Don't have an account? </Typography>&nbsp;&nbsp;
+          {/* <Typography sx={{ fontStyle: "italic", color: "#7C7C81" }} >Don't have an account? </Typography>&nbsp;&nbsp; */}
 
           {
-            // status ? <Typography sx={{ fontWeight: "bold" }}> {res.data}</Typography> :
+            // status ? <Typography sx={{ fontWeight: "bold" }}> {res?.data}</Typography> :
             <Typography sx={{ fontWeight: "bold" }}> Sign up →</Typography>
           }
 

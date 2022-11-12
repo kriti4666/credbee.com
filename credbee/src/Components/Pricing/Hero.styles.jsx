@@ -20,7 +20,7 @@ export const HeroWrapper = styled.div`
     width: 60vw;
     margin: auto;
     padding-top: 150px;
-    padding-bottom: 20px;
+    padding-bottom: 70px;
   }
   .header {
     color: white;
@@ -38,6 +38,7 @@ export const HeroWrapper = styled.div`
     color: white;
     border: 1px solid white;
     padding: 0 1em;
+    cursor:pointer;
     display: flex;
     justify-content: center;
     align-items: center;

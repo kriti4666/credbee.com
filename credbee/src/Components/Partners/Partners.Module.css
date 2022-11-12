@@ -1,8 +1,10 @@
 
 .p-head {
     display: flex;
-    background-color: blueviolet;
+    background: url(https://webstatic.chargebee.com/assets/web/536/images/partners/bg-circle1.svg) no-repeat;
+    background: linear-gradient( 100.96deg, #4300A3 33.34%, #6100BB 71.36% );
     color: white;
+    padding: 1rem;
     justify-content: space-evenly;
     font-family: var(--ff_primary);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 15px;
@@ -10,9 +12,6 @@
 
 .p-box {
     width: 100%;
-    margin: auto;
-    display: flex;
-    gap: 3rem;
     color: white;
     background: linear-gradient( 100.96deg, #4300A3 33.34%, #6100BB 71.36%, #A700F1 104.8% );
     /* border: 1px solid red; */
@@ -20,14 +19,24 @@
 
 .p-left {
     flex: 1;
-    padding-top: 10rem;
-    text-align: left;
-    padding: 3rem;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 100px;
+    padding: 6rem 3rem;
+    justify-items: center;
+    box-sizing: content-box;
+    margin-top: 2rem;
+    
 }
 
 .p-left >button {
+    width: 250px;
+    margin-left: 32%;
     border-radius: 10px;
     border: none;
+    padding: 0px 5px;
     background-color: #6100BB;
     color: white;
     
@@ -40,13 +49,169 @@
 
 .p-right {
     flex: 1;
-    padding: 5rem;
+    padding: 3rem 3rem;
 }
 
 .p-right > div {
-    padding: 3rem;
+    padding: 20px;
     border: 1px solid;
     background-color: white;
     color: black;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 15px;
+
+}
+.p-btn {
+    background: linear-gradient( 100.96deg, #4300A3 33.34%, #6100BB 71.36%, #A700F1 104.8% );
+    padding: 0.5rem;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-bottom: 1rem;
 }
 
+.p-cont1 {
+    width: 70%;
+    height:350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: unsafe;
+    margin: auto;
+    padding: 2rem;
+    justify-items: center;
+    box-sizing: content-box;
+    margin-top: 2rem;
+    
+}
+.p-allbtn {
+    width: 20%;
+    margin-left: 40%;
+    border-radius: 10px;
+    border: none;
+    padding: 0px 5px;
+    background-color: #c9a9e8;
+    color: #6100BB;
+    
+}
+
+.logo-box {
+    width: 70%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:30px;
+} 
+.p-grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 70%;
+    margin: auto;
+    height: 150px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 15px;
+    padding-bottom: -15px;
+    /* border: 1px solid; */
+}
+
+.p-grid2{
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;  
+    align-items: flex-end;
+    /* border: 1px solid; */
+}
+p-grid1{
+    margin-top: 30px;
+}
+p-grid1>img{
+    width: 50%;
+    margin: auto;
+}
+.p-grid2 img{
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 5px;
+    width: 20px;
+    background-color: #4300A3;
+}
+.p-grid:hover {
+    transform: scale(1.1);
+}
+
+h3 {
+    padding-top: 50px;
+    color: #6100BB;
+    text-align: center;
+}
+
+
+
+@media screen and (max-width: 768px){
+
+    .logo-box {
+        display: grid;
+        width: 90%;
+        grid-template-columns: repeat(10, 1fr);
+        margin: auto;
+        padding: 10px 0 10px 15px;
+        overflow: scroll;
+        margin-bottom: 30px;
+        box-sizing: border-box;
+    }
+
+    .p-grid {
+        width: 120px;
+        height: 80px;
+        box-sizing: border-box;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    
+       
+    }
+    p-grid1>img{
+        width: 30%;
+        margin: auto;
+        margin-top: -20px;
+    }
+   
+    .p-cont1 {
+        width: 90%;
+        height:350px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: start;
+        padding: 2rem;
+        
+    }
+    .p-allbtn {
+        width: 230px;
+        margin-left: 0px;
+        font-size: 15px;
+        border-radius: 10px;
+        border: none;
+        padding: 3px 5px;
+        background-color: #c9a9e8;
+        color: #6100BB;
+        
+    }
+
+    .p-left {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: start;
+        
+    }
+
+    .p-left >button{
+        width: 250px;
+        margin-left: 0px;
+        font-size: 15px;
+        border-radius: 10px;
+        border: none;
+        padding: 3px 5px;
+        
+    }
+    
+    
+}

@@ -5,22 +5,44 @@ import mongoose from "mongoose";
 const userSchema = new mongoose.Schema({
     email: {
         type: String,
-        required: true,
+        // required: true,
         trim: true,
         unique: true,
         lowercase: true,
     },
     phone: {
         type: Number,
-        required: true,
+        // required: true,
         trim: true,
         unique: true,
     },
     password: {
         type: String,
-        required: true,
+        // required: true,
         trim: true,
-    }
+    },
+    name: {
+        type: String,
+        trim: true,
+    },
+    bEmail: {
+        type: String,
+        trim: true,
+        lowercase: true,
+    },
+    mobile: {
+        type: Number,
+        trim: true,
+    },
+    website: {
+        type: String,
+        trim: true,
+    },
+    plan: {
+        type: String,
+        trim: true,
+    },
+    
 }, {
     versionKey: false,
     timestamps: true,
