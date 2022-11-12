@@ -2,11 +2,14 @@
 
 import express from "express";
 
-import { UserSignup } from "../Controller/userController.js";
+import { UserSignup, userLogin, userDemoFrom } from "../Controller/userController.js";
 
 const router = express.Router();
 
 //post api with end point signup and callback fx UserSignup
 router.post("/signup", UserSignup);
+router.post("/login", userLogin);
+router.post("/pricing", userDemoFrom);
+
 
 export default router;

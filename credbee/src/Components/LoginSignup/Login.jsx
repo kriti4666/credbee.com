@@ -1,4 +1,7 @@
 import { Box, Button, styled, TextField, Typography } from "@mui/material"
+import { useState } from "react";
+
+import { authenticateLogin } from "../API/signupAPI";
 
 const LoginPageNav = styled(Box)`
 
@@ -38,21 +41,69 @@ const LoginSectionRightDiv = styled(Box)`
 
 `
 
+const loginInit = {
+  email: "",
+  password: "",
+}
 
 const Login = () => {
 
+  const [login, setLogin] = useState(loginInit);
+  const [status, setStatus] = useState(false);
+  const [ toggle, setToggle ] = useState("")
+
+  const onValueChange = (e) => {
+    setLogin({ ...login, [e.target.name]: e.target.value })
+  }
+
+  let res, x
+  const loginUser = async () => {
+    res = await authenticateLogin(login);
+    x = res.data;
+    console.log(x);
+    if (res.status === 200) {
+      setStatus(true)
+    }
+    setLogin(loginInit)
+  }
+
   return (
     <Box style={{ background: "#EAEAF4", height: "700px" }}>
-      <LoginPageNav>
+      <LoginPageNav sx={{
+        display: {
+          xs: 'none',
+          sm: 'none',
+          md: 'none',
+          lg: 'flex'
+        }
+      }}>
         <LoginPageLogo src="https://d2jxbtsa1l6d79.cloudfront.net/static/app-static-assets/core/core-2.3.2/images/brand/cn-logotype-black.svg"></LoginPageLogo>
         <Box sx={{ display: "flex", marginTop: 5 }}>
-          <Typography sx={{ fontStyle: "italic", color: "#7C7C81" }} >Don't have an account? </Typography>&nbsp;&nbsp;
-          <Typography sx={{ fontWeight: "bold" }}> Sign up →</Typography>
+          {/* <Typography sx={{ fontStyle: "italic", color: "#7C7C81" }} >Don't have an account? </Typography>&nbsp;&nbsp; */}
+
+          {
+            // status ? <Typography sx={{ fontWeight: "bold" }}> {res?.data}</Typography> :
+            <Typography sx={{ fontWeight: "bold" }}> Sign up →</Typography>
+          }
+
+
         </Box>
       </LoginPageNav>
-      <LoginSection style={{ background: "white" }} >
+      <LoginSection style={{ background: "white" }} sx={{
+        width: {
+          sm: 500,
+          md: 820,
+          lg: 820
+        },
+      }}>
         <LoginSectionLeftDiv>
-          <img style={{ width: 100, marginRight: 300, marginTop: 30 }} src="https://d2jxbtsa1l6d79.cloudfront.net/static/app-static-assets/core/core-2.3.2/images/brand/cn-logotype-black.svg" alt="image1"></img>
+          <img
+            style={{ width: 100, marginRight: 300, marginTop: 30 }}
+            src="https://d2jxbtsa1l6d79.cloudfront.net/static/app-static-assets/core/core-2.3.2/images/brand/cn-logotype-black.svg"
+            alt="image1"
+          >
+
+          </img>
           <Typography sx={{ marginTop: 3, marginLeft: -2 }}>
             ANNOUNCING SUMMER 2022 PRODUCT RELEASE
           </Typography>
@@ -69,9 +120,29 @@ const Login = () => {
         </LoginSectionLeftDiv>
         <LoginSectionRightDiv>
           <Typography style={{ marginTop: "30px", fontSize: "20px", marginRight: "150px", color: "#6D6D71" }} >Sign in to Chargebee!</Typography>
-          <TextField style={{ marginTop: "10px", width: "350px" }} variant="outlined" label='name@comapany.com' />
-          <TextField style={{ marginTop: "10px", width: "350px" }} variant="outlined" label='Phonenumber' />
-          <Button variant="contained" style={{ padding: "10px", width: "170px", background: "#FF7846", margin: 18, marginRight: "190px" }} >Sign in</Button> <br></br>
+          <TextField
+            style={{ marginTop: "10px", width: "350px" }}
+            variant="outlined"
+            label='name@comapany.com'
+            name="email"
+            onChange={(e) => onValueChange(e)}
+            value={login.email}
+          />
+          <TextField
+            style={{ marginTop: "10px", width: "350px" }}
+            variant="outlined"
+            label='Password'
+            name="password"
+            onChange={(e) => onValueChange(e)}
+            value={login.password}
+          />
+          <Button
+            variant="contained"
+            style={{ padding: "10px", width: "170px", background: "#FF7846", margin: 18, marginRight: "190px" }}
+            onClick={() => loginUser()}
+          >
+            Sign in
+          </Button> <br></br>
           <Button variant="contained" style={{ padding: "20px", width: "220px", background: "#4285F4", marginRight: "120px" }} >Sign in with Google</Button>
           <Typography style={{ marginTop: 20, color: "blue" }} >Sign in with Single Sign-On</Typography>
         </LoginSectionRightDiv>

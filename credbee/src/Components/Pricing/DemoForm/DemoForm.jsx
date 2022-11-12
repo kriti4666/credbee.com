@@ -1,13 +1,15 @@
 import React, { useEffect, useRef, useState } from "react";
+import { demoForm } from "../../API/signupAPI";
 import { BsArrowRight } from "react-icons/bs";
 import { DemoFormContainer } from "./DemoFormContainer.styles";
 import axios from "axios";
 
+
 const DemoForm = () => {
   const initialValues = {
     name: "",
-    email: "",
-    phone: "",
+    bEmail: "",
+    mobile: "",
     website: "",
     plan: "",
   };
@@ -21,38 +23,39 @@ const DemoForm = () => {
     setFormValues({ ...formValues, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
     setFormErrors(validate(formValues));
     setIsSubmit(true);
+    let x = await demoForm(formValues)
   };
 
-  useEffect(() => {
-    if (Object.keys(formErrors).length === 0 && isSubmit) {
-      axios.post("", formValues);
-    }
-  }, [formErrors]);
+  // useEffect(() => {
+  //   if (Object.keys(formErrors).length === 0 && isSubmit) {
+  //     axios.post("", formValues);
+  //   }
+  // }, [formErrors]);
 
   const validate = (values) => {
     const errors = {};
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
     const domainRegex = /^[a-z0-9]+([-.][a-z0-9]+)*\.[a-z]{2,}$/i;
-    if (!values.email) {
-      errors.email = "Business email is required";
-    } else if (!regex.test(values.email)) {
-      errors.email = "This is not a valid business email format";
+    if (!values.bEmail) {
+      errors.bEmail = "Business email is required";
+    } else if (!regex.test(values.bEmail)) {
+      errors.bEmail = "This is not a valid business email format";
     } else if (
-      values.email.includes("@gmail.com") ||
-      values.email.includes("@yahoo.com") ||
-      values.email.includes("@hotmail.com") ||
-      values.email.includes("@rocketmail.com")
+      values.bEmail.includes("@gmail.com") ||
+      values.bEmail.includes("@yahoo.com") ||
+      values.bEmail.includes("@hotmail.com") ||
+      values.bEmail.includes("@rocketmail.com")
     ) {
-      errors.email = "This is not a valid business email";
+      errors.bEmail = "This is not a valid business email";
     }
-    if (!values.phone) {
-      errors.phone = "Mobile number is required";
-    } else if (isNaN(formValues.phone) || formValues.phone.length !== 10) {
-      errors.phone = "Enter a 10 digit valid mobile number";
+    if (!values.mobile) {
+      errors.mobile = "Mobile number is required";
+    } else if (isNaN(formValues.mobile) || formValues.mobile.length !== 10) {
+      errors.mobile = "Enter a 10 digit valid mobile number";
     }
     if (!values.website) {
       errors.website = "Company Website is required";
@@ -89,11 +92,11 @@ const DemoForm = () => {
           type="text"
           className="inputEmail"
           placeholder="Business Email"
-          value={formValues.email}
+          value={formValues.bEmail}
           onChange={handleChange}
-          name="email"
+          name="bEmail"
         />
-        <p>{formErrors.email}</p>
+        <p>{formErrors.bEmail}</p>
         <div className="phoneNumber">
           <div class="select-list">
             <select name="course_type" id="course_type">
@@ -746,12 +749,12 @@ const DemoForm = () => {
             type="text"
             className="number"
             placeholder="Mobile Number"
-            value={formValues.phone}
+            value={formValues.mobile}
             onChange={handleChange}
-            name="phone"
+            name="mobile"
           />
         </div>
-        <p>{formErrors.phone}</p>
+        <p>{formErrors.mobile}</p>
         <input
           type="text"
           className="website"
