@@ -1,5 +1,6 @@
 import { Box, Button, styled, TextField, Typography } from "@mui/material"
 import { useState } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
 
 import { authenticateLogin } from "../API/signupAPI";
 
@@ -47,7 +48,7 @@ const loginInit = {
 }
 
 const Login = () => {
-
+  const navigate = useNavigate();
   const [login, setLogin] = useState(loginInit);
   const [status, setStatus] = useState(false);
   const [ toggle, setToggle ] = useState("")
@@ -61,8 +62,13 @@ const Login = () => {
     res = await authenticateLogin(login);
     x = res.data;
     console.log(x);
-    if (res.status === 200) {
+    if (res.status === 200 && x !== "admin@chargebee.com") {
       setStatus(true)
+      alert("Login Successful")
+      navigate("/user")
+    }
+    if(x === "admin@chargebee.com") {
+     navigate("/admin")
     }
     setLogin(loginInit)
   }
