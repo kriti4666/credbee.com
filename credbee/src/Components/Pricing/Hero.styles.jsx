@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { down } from "styled-breakpoints";
+import { up, down } from "styled-breakpoints";
 
 export const HeroWrapper = styled.div`
   @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;500;700&display=swap");
@@ -17,21 +17,24 @@ export const HeroWrapper = styled.div`
   }
 
   .heroSection {
-    width: 60vw;
+    width: 65vw;
     margin: auto;
     padding-top: 150px;
     padding-bottom: 70px;
   }
+
   .header {
     color: white;
     font-size: 6.4em;
   }
+
   .subHeader {
     display: flex;
     gap: 0.5em;
     color: white;
     font-size: 2em;
   }
+
   .btnTalk {
     border-radius: 40px;
     background-color: transparent;
@@ -44,6 +47,7 @@ export const HeroWrapper = styled.div`
     align-items: center;
     align-content: center;
   }
+
   .btnTalk > p {
     margin: 0px;
     font-size: 0.5em;
@@ -60,10 +64,12 @@ export const HeroWrapper = styled.div`
     gap: 30px;
     flex-wrap: wrap;
   }
+
   .planSummaryContainer {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
+    // justify-content: space-around;
   }
 
   .planSummaryCard {
@@ -74,6 +80,7 @@ export const HeroWrapper = styled.div`
   .planSumName {
     font-size: 3.5em;
   }
+
   .planSumDesc {
     font-size: 1.4em;
     font-weight: 400;
@@ -84,6 +91,7 @@ export const HeroWrapper = styled.div`
       width: 75vw;
     }
   }
+
   ${down("lg")} {
     .heroSection {
       width: 75vw;
@@ -101,6 +109,7 @@ export const HeroWrapper = styled.div`
       grid-template-columns: repeat(2, 1fr);
     }
   }
+
   ${down("md")} {
     .heroSection {
       width: 75vw;
