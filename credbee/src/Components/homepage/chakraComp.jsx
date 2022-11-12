@@ -7,6 +7,9 @@ import SubThree from "./sub3";
 import SubFour from "./sub4";
 import SubFive from "./sub5";
 
+import below from "./images/below.png"
+import Footerfun from "./Footer";
+
 export function Comp() {
     return (
         <div className="second_homepage">
@@ -47,6 +50,12 @@ export function Comp() {
                         </TabPanel>
                     </TabPanels>
                 </Tabs>
+            </div>
+            <div className="Below_Img">
+                <img src={below} />
+            </div>
+            <div className="Footer">
+                {/* <Footerfun/> */}
             </div>
         </div>
 

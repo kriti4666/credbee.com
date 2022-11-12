@@ -10,6 +10,8 @@ import d2 from "./images/d2.png"
 import d3 from "./images/d3.png"
 import d4 from "./images/d4.png"
 import d1 from "./images/d1.png"
+import { Link } from "react-router-dom";
+import { Heading } from "@chakra-ui/react";
 
 export function Body() {
     const [value, setValue] = React.useState('one');
@@ -25,13 +27,24 @@ export function Body() {
                     <h1>The billing platform that gives Superfoods the freedom to test, iterate, and roll-back..</h1>
                     <p>Chargebee is the subscription billing and revenue <br /> management platform that lets you solve for your today,<br /> and scale for your tomorrow.</p>
                     <div className="sliderButton">
-                        <button className="sliderBTN_1">Get a demo</button>
-                        <button className="sliderBTN_2">Sign up for free</button>
+                        <button className="sliderBTN_1"><Link to="Demo">Get a demo</Link></button>
+                        <button className="sliderBTN_2"><Link to="./Signup">Sign up for free</Link></button>
                     </div>
+                </div>
+                <div className="ImageDiv_2">
+                    <img src="https://webstatic.chargebee.com/assets/web/534/images/home/coc/customers/paul-kapsner.png" alt="person" />
+                    <p><span>Paul Kapsner,</span><br />
+                        Director, Finance & <br />
+                        Operations - Superfoods</p >
                 </div>
                 <div className="imageDiv">
                     <img src="https://webstatic.chargebee.com/assets/web/534/images/home/coc/customers/paul-kapsner.png" alt="person" />
+                    <p className="ImageText" ><span>Paul Kapsner,</span><br />
+                        Director, Finance & <br />
+                        Operations - Superfoods</p >
                 </div>
+
+
             </div>
             <div className="sliderxx_2">
                 <marquee className="imgSlide" behavior="scroll" direction="left" scrollamount="5">
