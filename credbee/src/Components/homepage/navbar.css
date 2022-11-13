@@ -1,204 +1,202 @@
 .NavbarDiv {
-    display: flex;
-    justify-content: space-between;
-    width: 95%;
-    margin: auto;
-    margin-top: 10px;
-    /* border: 1px solid; */
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+  margin: auto;
+  margin-top: 10px;
+  /* border: 1px solid; */
 }
 
 body {
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .more {
-    display: none;
+  display: none;
 }
 
-.LogoDiv img {
-    width: 115px;
-    margin-right: 35px;
+.LogoDiv * {
+  width: 115px;
+  margin-right: 35px;
 }
 
 .dropdown {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 
 .moreImg {
-    display: none;
+  display: none;
 }
 
 .firstHalf {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    /* border: 1px solid; */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* border: 1px solid; */
 }
 
 .Navcontent span {
-    display: flex;
-    padding: 10px;
-    font-weight: 500;
-    padding-bottom: 16px;
-    color: #00000a;
-    font-size: 16px;
+  display: flex;
+  padding: 10px;
+  font-weight: 500;
+  padding-bottom: 16px;
+  color: #00000a;
+  font-size: 16px;
 }
 
 .Navcontent span:hover {
-    color: #ff7846;
-    ;
+  color: #ff7846;
 }
 
 .secondHalf {
-    display: flex;
-    padding: 10px;
-    font-weight: 500;
-    padding-bottom: 16px;
-    color: #00000a;
-    font-size: 16px;
-    /* border: 1px solid; */
+  display: flex;
+  padding: 10px;
+  font-weight: 500;
+  padding-bottom: 16px;
+  color: #00000a;
+  font-size: 16px;
+  /* border: 1px solid; */
 }
 
 .secondHalf div {
-    margin-left: 25px;
+  margin-left: 25px;
 }
 
 .dropdown button {
-    background-color: #ff7846;
-    border: 0px;
-    padding: 9px 15px;
-    color: #ffffff;
-    border-radius: 2px;
+  background-color: #ff7846;
+  border: 0px;
+  padding: 9px 15px;
+  color: #ffffff;
+  border-radius: 2px;
 }
 
 .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    margin: auto;
-    width: 90rem;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  margin: auto;
+  width: 90rem;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
 
 .dropdown:nth-child(1):hover .dropdown-content {
-    display: block;
-    margin-left: -155px;
-    padding-left: 40px;
+  display: block;
+  margin-left: -155px;
+  padding-left: 40px;
 }
 
 .dropdown:nth-child(3):hover .dropdown-content {
-    display: block;
-    margin-left: -310px;
-    padding-left: 40px;
+  display: block;
+  margin-left: -310px;
+  padding-left: 40px;
 }
 
-
 .dropdown:nth-child(5):hover .dropdown-content {
-    display: block;
-    margin-left: -485px;
+  display: block;
+  margin-left: -485px;
 }
 
 /* -------------------tablet----------------------- */
-@media (min-width: 1100px) and (max-width:1441px) {
-    .NavbarDiv {
-        display: flex;
-        justify-content: space-between;
-        width: 90%;
-        margin: auto;
-        margin-top: 10px;
-        margin-left: 80px;
-    }
+@media (min-width: 1100px) and (max-width: 1441px) {
+  .NavbarDiv {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+    margin-top: 10px;
+    margin-left: 80px;
+  }
 }
 
 /* ----------------macx-tab-------------- */
 
-@media all and (min-width:768px) and (max-width:1100px) {
-    .NavbarDiv {
-        display: flex;
-        width: 100%;
-        margin-top: 10px;
-    }
-    .Navcontent span {
-        font-size: 13px;
-    }
-    .firstHalf {
-        width: 65%
-    }
-    .secondHalf {
-        width: 35%
-    }
-    .secondHalf {
-        display: flex;
-        padding-bottom: 16px;
-        color: #00000a;
-        font-size: 12px;
-        /* border: 1px solid; */
-    }
-    .dropdown button {
-        background-color: #ff7846;
-        border: 0px;
-        padding: 4px 10px;
-        color: #ffffff;
-        border-radius: 2px;
-    }
-    .LogoDiv img {
-        width: 75px;
-        margin-right: 15px;
-    }
+@media all and (min-width: 768px) and (max-width: 1100px) {
+  .NavbarDiv {
+    display: flex;
+    width: 100%;
+    margin-top: 10px;
+  }
+  .Navcontent span {
+    font-size: 13px;
+  }
+  .firstHalf {
+    width: 65%;
+  }
+  .secondHalf {
+    width: 35%;
+  }
+  .secondHalf {
+    display: flex;
+    padding-bottom: 16px;
+    color: #00000a;
+    font-size: 12px;
+    /* border: 1px solid; */
+  }
+  .dropdown button {
+    background-color: #ff7846;
+    border: 0px;
+    padding: 4px 10px;
+    color: #ffffff;
+    border-radius: 2px;
+  }
+  .LogoDiv img {
+    width: 75px;
+    margin-right: 15px;
+  }
 }
 
 /* ------------------- Tablet to mobile------------------- */
 
 @media (min-width: 414px) and (max-width: 768px) {
-    .Navcontent {
-        display: none;
-    }
-    .secondHalf {
-        display: none;
-    }
-    .more {
-        display: block
-    }
-    .firstHalf {
-        width: 100%;
-        border: 1px solid;
-        justify-content: space-between;
-        padding: 10px;
-    }
+  .Navcontent {
+    display: none;
+  }
+  .secondHalf {
+    display: none;
+  }
+  .more {
+    display: block;
+  }
+  .firstHalf {
+    width: 100%;
+    border: 1px solid;
+    justify-content: space-between;
+    padding: 10px;
+  }
 }
 
 /* ---------------------------mobile---------------------------- */
 
-@media (min-width: 214px) and (max-width:414px) {
-    .Navcontent {
-            display: none;
-            width: 100%;
-        }
-        .secondHalf {
-            display: none;
-        }
-        .more {
-            display: block
-        }
-        .Tablist_chakra{
-            visibility: hidden;
-            margin-top: -100px;
-            width: 65%;
-        }
+@media (min-width: 214px) and (max-width: 414px) {
+  .Navcontent {
+    display: none;
+    width: 100%;
+  }
+  .secondHalf {
+    display: none;
+  }
+  .more {
+    display: block;
+  }
+  .Tablist_chakra {
+    visibility: hidden;
+    margin-top: -100px;
+    width: 65%;
+  }
 
-        .firstHalf {
-            width: 100%;
-            border: 1px solid;
-            justify-content: space-between;
-            padding: 10px;
-            background-color: antiquewhite;
-        }
-        .NavbarDiv{
-            width: 100%;
-        }
+  .firstHalf {
+    width: 100%;
+    border: 1px solid;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: antiquewhite;
+  }
+  .NavbarDiv {
+    width: 100%;
+  }
 }

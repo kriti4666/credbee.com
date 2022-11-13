@@ -8,6 +8,7 @@ import { FormSectionWrapper } from "./FormSectionWrapper";
 import DemoForm from "./DemoForm/DemoForm";
 import { Navbar } from "../homepage/Navbar";
 import { ChakraProvider } from "@chakra-ui/react";
+import Footerfun from "../homepage/Footer"
 
 let data = PlanPricingData;
 
@@ -244,6 +245,7 @@ const Pricing = () => {
           </div>
         </div>
       </FormSectionWrapper>
+      <Footerfun></Footerfun>
     </div>
   );
 };

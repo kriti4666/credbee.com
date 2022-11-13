@@ -14,6 +14,7 @@ import {
 } from "@chakra-ui/react";
 import { AuthContext } from "../GlobalContext/AuthContext";
 import { ContextAuth } from "../AuthContextProvider.jsx/AuthContextProvider";
+import { LOGO } from "../LOGO/LOGO";
 
 export function Navbar() {
   // const { authStatus, handleAuthStatus } = useContext(ContextAuth);
@@ -24,7 +25,7 @@ export function Navbar() {
       <div className="firstHalf">
         <div className="LogoDiv">
           <Link to="/">
-            <img src={logoCred} alt="credLogo" />
+            <LOGO fill={"black"}/>
           </Link>
         </div>
         <div className="more">

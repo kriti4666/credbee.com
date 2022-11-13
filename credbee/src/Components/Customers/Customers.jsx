@@ -4,6 +4,7 @@ import { Navbar } from "../homepage/Navbar";
 import "../homepage/navbar.css";
 import { data } from "./CustomersData";
 import { Button, Image, Text } from "@chakra-ui/react";
+import Footerfun from "../homepage/Footer";
 
 const Customers = () => {
   console.log(data);
@@ -189,6 +190,7 @@ const Customers = () => {
           }
         </div>
       </div>
+      <Footerfun></Footerfun>
     </div>
   );
 };

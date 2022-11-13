@@ -13,7 +13,7 @@ import {
 } from "@chakra-ui/react";
 import {Box} from "@mui/system";
 import axios from "axios";
-import {useEffect} from "react";
+import {useContext, useEffect} from "react";
 import {useState} from "react";
 import { useParams } from "react-router-dom";
 import { LoadSkeleton } from "./Skeleton";

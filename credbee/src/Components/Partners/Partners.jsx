@@ -17,6 +17,7 @@ import { logo4 } from "../Partners/PartnersData";
 import { sp } from "../Partners/PartnersData";
 import partners from "../Partners/p_img/partners.png";
 import { Navbar } from "../homepage/Navbar";
+import Footerfun from "../homepage/Footer";
 
 // console.log(array);
 
@@ -343,6 +344,7 @@ const Partners = () => {
           Become a Partner
         </button>
       </div>
+      <Footerfun></Footerfun>
     </div>
   );
 };
