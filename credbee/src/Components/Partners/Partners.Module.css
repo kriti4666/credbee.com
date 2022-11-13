@@ -81,6 +81,7 @@
     box-sizing: content-box;
     margin-top: 2rem;
     
+    
 }
 .p-allbtn {
     width: 20%;
@@ -120,11 +121,11 @@
     align-items: flex-end;
     /* border: 1px solid; */
 }
-p-grid1{
+.p-grid1{
     margin-top: 30px;
 }
-p-grid1>img{
-    width: 50%;
+.p-grid1>img{
+    width: 100px;
     margin: auto;
 }
 .p-grid2 img{
@@ -137,13 +138,80 @@ p-grid1>img{
     transform: scale(1.1);
 }
 
-h3 {
+.h3 {
     padding-top: 50px;
     color: #6100BB;
     text-align: center;
 }
 
+.p-sell {
+    width: 100%;
+    height: 700px;
+    /* border: 1px solid; */
+    margin: auto;
+    margin-top: 30px;
+    display: flex;
+    background-color: #fbfafc;
+    flex-direction: column;
+}
 
+.sell-box {
+    display: flex;
+    /* border: 1px solid; */
+    flex-direction: row;
+    column-gap: 10px;
+    justify-content: space-evenly;
+}
+/* .p-sell1 {
+    display: flex;
+    border: 1px solid;
+    flex-direction: column;
+    justify-content: space-between;
+} */
+
+.p-sell1 > div {
+    width: 200px;
+}
+
+.p-sell1 > div > img {
+    width: 30%;
+    margin-bottom: 20px;
+    margin-left: 30%;
+
+}
+.p-youtube {
+    width: 70%;
+    height: 600px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+.tube-box{
+    margin-top: 30px;
+    display: flex;
+    row-gap: 10px;
+    flex-direction: row;
+}
+.p-img {
+    width: 70%;
+    margin: auto;
+}
+.p-goal {
+    width: 100%;
+    height: 500px;
+    background: linear-gradient( 100.96deg, #4300A3 33.34%, #6100BB 71.36%, #A700F1 104.8% );
+    color: white;
+    display: flex;
+    flex-direction: column;
+    column-gap: 100px;
+    justify-content: space-evenly;
+    font-family: var(--ff_primary);;
+}
+/* .p-goal :nth-child(1) {
+    
+    padding: 100px 0px 20px 0px;
+} */
 
 @media screen and (max-width: 768px){
 
@@ -151,7 +219,7 @@ h3 {
         display: grid;
         width: 90%;
         grid-template-columns: repeat(10, 1fr);
-        margin: auto;
+        margin-top: 100px;
         padding: 10px 0 10px 15px;
         overflow: scroll;
         margin-bottom: 30px;
@@ -166,8 +234,8 @@ h3 {
     
        
     }
-    p-grid1>img{
-        width: 30%;
+    .p-grid1>img{
+        width: 20%;
         margin: auto;
         margin-top: -20px;
     }
@@ -212,6 +280,45 @@ h3 {
         padding: 3px 5px;
         
     }
-    
-    
+    .p-sell {
+        width: 90%;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: start;
+    }
+
+    .sell-box {
+        display: flex;
+        width: 90%;
+        /* border: 1px solid; */
+        flex-direction: column;
+        column-gap: 25px;
+        font-size: larger;
+        margin-bottom: 30px;
+        
+    }
+    .p-sell1 > div > img {
+        margin-top: 20px;
+        width: 60px;
+        margin-left: 0px;
+    }
+    .p-youtube {
+        width: 100%;
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+    }
+    .tube-box{
+        margin: auto;
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 100px;
+    }
+    .p-img {
+        display: none;
+    }
 }

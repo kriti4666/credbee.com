@@ -1,26 +1,24 @@
 import {
-  Box,
-  Button,
-  Flex,
   FormControl,
   FormLabel,
-  Image,
   Input,
-  Select,
-  SimpleGrid,
+  Select, 
   Stack,
   Text,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 import "../Partners/Partners.Module.css";
 import "../Partners/PartnersData";
+import { TiChevronRight } from "react-icons/ti";
 import { array } from "../Partners/PartnersData";
 import { logo2 } from "../Partners/PartnersData";
 import { logo3 } from "../Partners/PartnersData";
 import { logo4 } from "../Partners/PartnersData";
+import { sp } from "../Partners/PartnersData";
+import partners from "../Partners/p_img/partners.png";
 import { Navbar } from "../homepage/Navbar";
 
-console.log(array);
+// console.log(array);
 
 const Partners = () => {
   const [input, setInput] = useState("");
@@ -49,7 +47,7 @@ const Partners = () => {
         <div className="p-left">
           <button>Chargebee Partner Programs</button>
           <p>Let's Work Together</p>
-          <br/>
+          <br />
           <Text fontSize="xl">
             Becoming a Chargebee partner enables access to the world of
             subscriptions, bringing increased value to merchants, merchant
@@ -118,9 +116,11 @@ const Partners = () => {
       {/*************************** fprm box end   **********************/}
       <div className="p-cont1">
         <button className="p-allbtn">Technology Alliance Partners</button>
-        <Text fontSize="2xl" as='b'>Payment Service Provider (PSPs)</Text>
-        <br/>
-        <Text fontSize="md">
+        <Text fontSize="2xl" as="b">
+          Payment Service Provider (PSPs)
+        </Text>
+        <br />
+        <Text fontSize="xl">
           Payment service providers (PSP) help manage the entire payment
           transaction from the moment
           <br /> your customer pays to the moment you receive the payment in
@@ -135,9 +135,8 @@ const Partners = () => {
       </div>
 
       {/***************************************       Grid Box 1          **********************/}
- 
-      <div className="logo-box"
-      >
+
+      <div className="logo-box">
         {array?.map((a) => {
           return (
             <div className="p-grid">
@@ -153,24 +152,27 @@ const Partners = () => {
       </div>
 
       <h3>See all Payment Gateways </h3>
-      
 
       {/********************       Partners Agencies        ***************/}
-      <div className="p-cont1" style={{marginBottom:"-150px"}}>
+      <div className="p-cont1" style={{ marginBottom: "-150px" }}>
         <button className="p-allbtn">Technology Alliance Partners</button>
-        <Text fontSize="2xl" as='b'>Independent Software Vendor (ISVs)</Text>
-        <br/>
-        <Text fontSize="md">
-        Through customized solutions and personalized integration support, Chargebee's <br/>
-        Independent Software Vendors deliver unique solutions that provide additional functionality <br/>
-        that helps grow the global network of merchants in the ever-expanding world of subscriptions.
+        <Text fontSize="2xl" as="b">
+          Independent Software Vendor (ISVs)
+        </Text>
+        <br />
+        <Text fontSize="xl">
+          Through customized solutions and personalized integration support,
+          Chargebee's <br />
+          Independent Software Vendors deliver unique solutions that provide
+          additional functionality <br />
+          that helps grow the global network of merchants in the ever-expanding
+          world of subscriptions.
         </Text>
       </div>
 
       {/**********************           Grid Box 2          **************/}
-      
-      <div className="logo-box"
-      >
+
+      <div className="logo-box">
         {logo2?.map((a) => {
           return (
             <div className="p-grid">
@@ -188,19 +190,23 @@ const Partners = () => {
       <h3>See all integrations</h3>
 
       {/**********************           Grid Box 3          **************/}
-      
-      <div className="p-cont1" style={{marginBottom:"-150px"}}>
-        <Text fontSize="2xl" as='b'>Solution Partners Agencies</Text>
-        <br/>
-        <Text fontSize="md">
-        Chargebee's Solutions Partners are a network of certified agencies and consultancies who provide <br/>
-        strategic and operational support to the growing economy of Subscription businesses. If you work <br/>
-         with businesses employing a business subscription model, apply to join our Solution Partners network today.
+
+      <div className="p-cont1" style={{ marginBottom: "-150px" }}>
+        <Text fontSize="2xl" as="b">
+          Solution Partners Agencies
+        </Text>
+        <br />
+        <Text fontSize="xl">
+          Chargebee's Solutions Partners are a network of certified agencies and
+          consultancies who provide <br />
+          strategic and operational support to the growing economy of
+          Subscription businesses. If you work <br />
+          with businesses employing a business subscription model, apply to join
+          our Solution Partners network today.
         </Text>
       </div>
 
-      <div className="logo-box"
-      >
+      <div className="logo-box">
         {logo3?.map((a) => {
           return (
             <div className="p-grid">
@@ -215,20 +221,23 @@ const Partners = () => {
         })}
       </div>
 
-         {/**********************           Grid Box 4          **************/}
-      
-      <div className="p-cont1" style={{marginBottom:"-150px"}}>
-        <Text fontSize="2xl" as='b'>Channel Resell Partners</Text>
-        <br/>
-        <Text fontSize="md">
-        Chargebee works with a variety of Referral Partners who believe in our mission of creating a more <br/>
-        connected subscription world. We offer a competitive referral commission to qualified partners who <br/>
-        refer merchants to Chargebee.
+      {/**********************           Grid Box 4          **************/}
+
+      <div className="p-cont1" style={{ marginBottom: "-150px" }}>
+        <Text fontSize="2xl" as="b">
+          Channel Resell Partners
+        </Text>
+        <br />
+        <Text fontSize="xl">
+          Chargebee works with a variety of Referral Partners who believe in our
+          mission of creating a more <br />
+          connected subscription world. We offer a competitive referral
+          commission to qualified partners who <br />
+          refer merchants to Chargebee.
         </Text>
       </div>
 
-      <div className="logo-box"
-      >
+      <div className="logo-box">
         {logo4?.map((a) => {
           return (
             <div className="p-grid">
@@ -243,10 +252,98 @@ const Partners = () => {
         })}
       </div>
 
+      {/********************            Sell as a Partner?         ***************/}
+      <div className="p-sell">
+        <div className="p-cont1" style={{ marginBottom: "-150px" }}>
+          <Text fontSize="2xl" as="b">
+            Why Sell as a Partner?
+          </Text>
+          <br />
+          <Text fontSize="xl">
+            As a Chargebee certified reseller, you have the opportunity to help
+            your growing business <br />
+            customers. Chargebee's easy-to-use flexible pricing and billing
+            logic enables your clients <br />
+            to scale and expand into new markets
+          </Text>
+        </div>
+        <div className="sell-box">
+          {sp?.map((a) => {
+            return (
+              <div className="p-sell1">
+                <div>
+                  <img src={a.logo} alt="" />
+                </div>
+                <div>
+                  <Text fontSize="xl" as="b">
+                    {a.title}
+                  </Text>
+                  <br />
+                  <Text>{a.desc}</Text>
+                </div>
+              </div>
+            );
+          })}
+        </div>
 
+        <button style={{ width: "200px", margin: "auto" }} className="p-btn">
+          Become a Partner
+        </button>
+      </div>
+      {/*********************************            Youtube charegebee             ******************/}
+      <div className="p-youtube">
+        <Text fontSize="3xl" as="b">
+          See how these partners achieved <br />
+          more with Chargebee
+        </Text>
+        <div className="tube-box">
+          <img
+            width="501"
+            height="317"
+            src="https://embed-ssl.wistia.com/deliveries/2383eda3a87e175b85eef53844d2d185739aaf46.jpg?image_play_button_size=2x&amp;image_crop_resized=960x540&amp;image_play_button=1&amp;image_play_button_color=5092dae0"
+            alt=""
+          />
+          <iframe
+            width="501"
+            height="317"
+            src="https://www.youtube.com/embed/2vtGuSSMyjo?list=TLGG3k-87Ofh5nkxMjExMjAyMg"
+            title="Agency Spotlight: Animalz"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <button style={{ width: "200px", margin: "auto" }} className="p-btn">
+          Become a Partner
+        </button>
+      </div>
+
+      <div className="p-img">
+        <img src={partners} alt="" />
+      </div>
+
+      {/************************              share goal            ********************/}
+      <div className="p-goal">
+        <Text fontSize="5xl" as="b">
+          Thousands of partners, <br /> one shared goal.
+        </Text>
+        <br />
+        <Text fontSize="xl">
+          From global start-ups to enterprise organizations, Chargebee partners
+          with unique, <br />
+          future-focused companies that want to do one thing: add value to their
+          customers. By <br />
+          partnering with organizations that share our values, we can bring our
+          customers the <br/> latest and greatest when it comes to subscription
+          management.
+        </Text>
+        <button style={{ width: "200px", margin: "auto" }} className="p-btn">
+          Become a Partner
+        </button>
+      </div>
     </div>
   );
-
 };
 
 export default Partners;
