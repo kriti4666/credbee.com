@@ -1,29 +1,49 @@
 .c-head {
     width: 100%;
-    height: auto;
-    background-color: rgba(245, 237, 237, 0.995);
-}
-
-.c-head > h1 {
-    text-align: left;
-    padding: 3rem;
-}
-
-.c-head >div{
+    height: 500px;
+    padding-left: 10%;
     display: flex;
-    gap: 2rem;
-    padding: 3rem;
-    margin-top: -5rem;
+    flex-direction: column;
+    background-color: #F0F0F5;
 }
 
-.c-head >div > div:nth-child(1) {
-    padding: 0px 10px;
-    border: 1px solid red;
-    font-weight: bold;
+.head{
+    text-align: left;
+    margin: 50px 20px;
+    /* border: 1px solid ; */
+    
 }
-.c-head >div > div:nth-child(2) {
+
+.signup{
+    width: 30%;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    row-gap: 20px;
+    margin-top: -20px;
+}
+
+.signup> :nth-child(1) {
+    width: 200px;
+    padding: 20px 0px;
+    color: red;
+    font-weight: bold;
+    border: 1px solid red;
+    
+}
+
+.signup> :nth-child(1):hover {
+    background-color: #FF7846;
+    border: none;
+    color: white;
+}
+.signup> :nth-child(2) {
+    width: 200px;
+    padding: 20px 0px;
     color: blue;
     font-weight: bold;
+    
 }
 
 .c-headBox {
@@ -33,7 +53,7 @@
     display: flex;
     gap: 2rem;
     margin: auto;
-    
+    /* border: 1px solid; */
 }
 
 .leftBox {
@@ -50,11 +70,24 @@
     width: 30px;
     border-radius: 50%;
 }
+.imgp {
+    margin-top: -400px;
+}
+.imgb2 {
+    width: 600px;
+    display: flex;
+    flex-direction: row;
+
+}
 
 .rightBox {
-    flex: 1;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: white;
     padding: 2rem;
-    background-color: rgba(38, 8, 231, 0.747);
+    background-color: #3E30A5;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
@@ -63,7 +96,7 @@
 } */
 .rightBox > span {
     color: red;
-    text-align: left;
+    text-align: right;
 
 }
 
@@ -82,7 +115,105 @@
 }
 
 .c-youtube {
-    padding: 3rem 0rem;
+    width: 50%;
+    padding: 100px 0px;
     margin: auto;
+    /* border: 1px solid; */
+}
+.bgcolor {
+    width: 100%;
+    padding: 5rem;
+    background-color: #F0F0F5;
+}
+.c-data {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    grid-gap: 30px;
+    max-width: 1000px;
+    margin: auto;
+    /* background-color: #F0F0F5; */
+}
+.details {
+    width: 500px;
+    height: 250px;
+    display: block;
+    padding: 20px;
+    margin: auto;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    background-color: white;
+}
+.details >div {
+    margin-top: 30px;
 }
 
+.details:nth-child(2) > a{
+    font-size: 20px;
+    font-weight: bold;
+    color: blue;
+}
+
+
+@media screen and (max-width: 768px) {
+    .c-head {
+        width: 100%;
+        height: max-content;
+        display: flex;
+        flex-direction: column;
+    }
+    .signup {
+        display: flex;
+        flex-direction: column;
+    }
+    .c-headBox {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column-reverse;
+
+    }
+    .c-row {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin: auto;
+    }
+    .c-row > img {
+        width: 30%;
+    }
+    .imgp {
+        width: 90%;
+        margin-top:0px;
+    }
+    .imgp > img {
+        width: 400px;
+    }
+    .rightBox {
+        width: 315px;
+    }
+    .imgb2 {
+        width: 400px;
+    }
+    .imgb2 > img {
+        width: 200px;
+    }
+    .c-youtube {
+        width: 100%;
+    }
+    .c-youtube > iframe {
+        margin: auto;
+        width: 400px;
+    }
+    .bgcolor {
+        width: 100%;
+    }
+    .c-data {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+    }
+    .details {
+        width: 100%;
+        height: max-content;
+    }
+}

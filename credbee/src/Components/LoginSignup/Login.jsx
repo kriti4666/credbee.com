@@ -66,7 +66,7 @@ const Login = () => {
       
       
       alert("Login Successful");
-      navigate("/user");
+      navigate(`/user/${login.email}`);
     }
     if (x === "admin@chargebee.com") {
       // setStatus(true)

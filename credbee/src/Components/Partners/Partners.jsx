@@ -151,7 +151,7 @@ const Partners = () => {
         })}
       </div>
 
-      <h3>See all Payment Gateways </h3>
+      <h3>See all Payment Gateways →</h3>
 
       {/********************       Partners Agencies        ***************/}
       <div className="p-cont1" style={{ marginBottom: "-150px" }}>
@@ -187,7 +187,7 @@ const Partners = () => {
         })}
       </div>
 
-      <h3>See all integrations</h3>
+      <h3>See all integrations →</h3>
 
       {/**********************           Grid Box 3          **************/}
 
@@ -325,11 +325,12 @@ const Partners = () => {
 
       {/************************              share goal            ********************/}
       <div className="p-goal">
+        <br/>
         <Text fontSize="5xl" as="b">
           Thousands of partners, <br /> one shared goal.
         </Text>
         <br />
-        <Text fontSize="xl">
+        <Text className="hide" fontSize="xl">
           From global start-ups to enterprise organizations, Chargebee partners
           with unique, <br />
           future-focused companies that want to do one thing: add value to their
