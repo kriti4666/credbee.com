@@ -1,5 +1,5 @@
-import React, {useContext} from "react";
-import {Link} from "react-router-dom";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import logoCred from "./images/credLogo.png";
 import "./navbar.css";
 import Pricing from "./pricing";
@@ -12,11 +12,13 @@ import {
   MenuItem,
   MenuList,
 } from "@chakra-ui/react";
-import {AuthContext} from "../GlobalContext/AuthContext";
+import { AuthContext } from "../GlobalContext/AuthContext";
+import { ContextAuth } from "../AuthContextProvider.jsx/AuthContextProvider";
 
 export function Navbar() {
-  const {isAuth} = useContext(AuthContext);
-  console.log(isAuth);
+  // const { authStatus, handleAuthStatus } = useContext(ContextAuth);
+  let authStatus = localStorage.getItem("authStatus");
+  console.log(authStatus);
   return (
     <div className="NavbarDiv">
       <div className="firstHalf">
@@ -33,9 +35,9 @@ export function Navbar() {
               transition="all 0.2s"
               borderRadius="md"
               borderWidth="1px"
-              _hover={{bg: "gray.400"}}
-              _expanded={{bg: "blue.400"}}
-              _focus={{boxShadow: "outline"}}
+              _hover={{ bg: "gray.400" }}
+              _expanded={{ bg: "blue.400" }}
+              _focus={{ boxShadow: "outline" }}
             >
               Menu
             </MenuButton>
@@ -59,10 +61,10 @@ export function Navbar() {
               <MenuDivider />
               <MenuItem>English</MenuItem>
               <MenuItem>
-                <Link to="/Login">{isAuth ? "Logout" : "Login"}</Link>
+                <Link to="/Login">{authStatus ? "Logout" : "Login"}</Link>
               </MenuItem>
               <MenuItem>
-                <Link to="/Demo">Get a Demo</Link>
+                {authStatus ? <Link to="/Demo">Get a Demo</Link> : <Link to="/Demo">Get a Demo</Link>}
               </MenuItem>
             </MenuList>
           </Menu>
@@ -120,12 +122,12 @@ export function Navbar() {
           </div>
           <div className="dropdown">
             <span>
-              <Link to="./Login">{isAuth ? "Logout" : "Login"}</Link>
+              <Link to="/Login">{authStatus ? "Logout" : "Login"}</Link>
             </span>
           </div>
           <div className="dropdown">
             <button>
-              <Link to="/Demo">Get a demo</Link>
+              {authStatus?<Link to="/user">Profile</Link>:<Link to="/Demo">Get a demo</Link>}
             </button>
           </div>
         </div>

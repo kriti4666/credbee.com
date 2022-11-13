@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { down } from "styled-breakpoints";
+import { down, up } from "styled-breakpoints";
 
 export const DemoFormContainer = styled.div`
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;500;700&display=swap");
@@ -143,6 +143,11 @@ form>p{
     }
     .labelHq~div{
         flex-wrap: wrap;
+    }
+  }
+  ${up("lg")}{
+    .DemoCTABtn{
+        width: auto;
     }
   }
 `

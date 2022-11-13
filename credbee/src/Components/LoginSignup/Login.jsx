@@ -47,7 +47,7 @@ const Login = () => {
 
   const navigate = useNavigate();
   const [login, setLogin] = useState(loginInit);
-  const [status, setStatus] = useState(false);
+  // const [status, setStatus] = useState(false);
 
   const onValueChange = (e) => {
     setLogin({...login, [e.target.name]: e.target.value});
@@ -56,18 +56,20 @@ const Login = () => {
   let res, x;
   const loginUser = async () => {
     res = await authenticateLogin(login);
-    x = res.data;
+    // x = res.data;
     if (res.status === 200 && x !== "admin@chargebee.com") {
       handleAuthStatus({
         checkAuth: true,
         admin: false,
         user: true,
       });
+      
+      
       alert("Login Successful");
       navigate(`/user/${login.email}`);
     }
     if (x === "admin@chargebee.com") {
-      setStatus(true)
+      // setStatus(true)
       handleAuthStatus({
         checkAuth: true,
         admin: true,
@@ -77,8 +79,9 @@ const Login = () => {
     }
     setLogin(loginInit);
   };
-
-   console.log(authStatus)
+  
+  localStorage.setItem("authStatus", authStatus.checkAuth)
+  console.log(authStatus)
 
   return (
     <Box style={{background: "#EAEAF4", height: "700px"}}>
@@ -138,7 +141,7 @@ const Login = () => {
                 fontSize: 15,
               }}
             >
-              Chargebee's Summer 2022 Release brings you better monetization
+              Credbee's Summer 2022 Release brings you better monetization
               capabilities that help you seize revenue opportunities by
               improving customer lifetime value, managing cashflows better, and
               achieving topline growth. See what's new across our products
@@ -154,7 +157,7 @@ const Login = () => {
               color: "#6D6D71",
             }}
           >
-            Sign in to Chargebee!
+            Sign in to Credbee!
           </Typography>
           <TextField
             style={{marginTop: "10px", width: "350px"}}

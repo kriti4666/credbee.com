@@ -17,9 +17,12 @@ import {useEffect} from "react";
 import {useState} from "react";
 import { useParams } from "react-router-dom";
 import { LoadSkeleton } from "./Skeleton";
+import { ContextAuth } from "../AuthContextProvider.jsx/AuthContextProvider";
 
 const User = () => {
   const [loading, setLoading] = useState(false);
+  const { authStatus, handleAuthStatus } = useContext(ContextAuth);
+
   const [error, setError] = useState(false);
   const [data,setData] = useState([])
 
@@ -43,10 +46,12 @@ const User = () => {
     }, 2000);
   }, []);
 
+  console.log(authStatus);
 
   if(error){
     return <Box>Error</Box>
   }
+
   return (
     <Container maxW="100vw" py={{md: "100px", base: "0px"}}>
       <Center>
