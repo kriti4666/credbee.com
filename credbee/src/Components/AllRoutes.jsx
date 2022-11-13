@@ -44,7 +44,7 @@ const AllRoutes = () => {
         }
       />
       <Route
-        path="/user"
+        path="/user/:email"
         element={
           <ChakraProvider>
             <User />

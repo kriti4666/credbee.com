@@ -29,7 +29,7 @@ const Admin = () => {
   const [inputTag, setInputTag] = useState("");
 
   const handleSearch = () => {
-    const serched = allData.filter((ele) => ele.first_name.includes(inputTag));
+    const serched = allData.filter((ele) => ele.name.includes(inputTag));
     setState(serched);
   };
 
@@ -37,7 +37,7 @@ const Admin = () => {
     const filtered =
       target.value === "All"
         ? [...allData]
-        : allData.filter((ele) => ele.gender === target.value);
+        : allData.filter((ele) => ele.plan === target.value);
     setState(filtered);
   };
 
@@ -45,18 +45,18 @@ const Admin = () => {
     const sorted = [...state];
     if (target.value === "ace") {
       sorted.sort((a, b) => {
-        if (a.first_name > b.first_name) {
+        if (a.name.toLowerCase() > b.name.toLowerCase()) {
           return 1;
-        } else if (a.first_name < b.first_name) {
+        } else if (a.name.toLowerCase() < b.name.toLowerCase()) {
           return -1;
         }
         return 0;
       });
     } else if (target.value === "dec") {
       sorted.sort((a, b) => {
-        if (a.first_name > b.first_name) {
+        if (a.name.toLowerCase() > b.name.toLowerCase()) {
           return -1;
-        } else if (a.first_name < b.first_name) {
+        } else if (a.name.toLowerCase() < b.name.toLowerCase()) {
           return 1;
         }
         return 0;
@@ -68,7 +68,10 @@ const Admin = () => {
   const getData = async () => {
     try {
       const res = await axios.get("http://localhost:8080/admin");
-      console.log(res.data);
+      const data = res.data.filter((ele) => ele.plan);
+      console.log(data);
+      setAllData(data);
+      setState(data);
       setLoading(true);
     } catch (e) {
       setError(true);
@@ -78,8 +81,7 @@ const Admin = () => {
   useEffect(() => {
     setTimeout(() => {
       getData();
-      setAllData(usersData);
-      setState(usersData);
+
       setLoading(true);
     }, 2000);
   }, []);
@@ -88,6 +90,10 @@ const Admin = () => {
     return <Text>Error...</Text>;
   }
 
+  const handleDelete=(id)=>{
+    const newData = state.filter((ele)=>ele._id!==id)
+    setState(newData)
+  }
   return (
     <Container maxW="100vw" py={{md: "100px", base: "0px"}}>
       <Center>
@@ -173,11 +179,17 @@ const Admin = () => {
                   <option style={{color: "black"}} value="All">
                     All
                   </option>
-                  <option style={{color: "black"}} value="Male">
-                    Male
+                  <option style={{color: "black"}} value="Launch">
+                    Launch
                   </option>
-                  <option style={{color: "black"}} value="Female">
-                    Female
+                  <option style={{color: "black"}} value="Rise">
+                    Rise
+                  </option>
+                  <option style={{color: "black"}} value="Scale">
+                    Scale
+                  </option>
+                  <option style={{color: "black"}} value="Enterprise">
+                    Enterprise
                   </option>
                 </Select>
               </Stack>
@@ -198,7 +210,13 @@ const Admin = () => {
                 bg="#E2E8F0"
               >
                 {loading ? (
-                  state.map((ele, i) => <SingleUser key={i} data={ele} />)
+                  state.map((ele) => (
+                    <SingleUser
+                      key={ele._id}
+                      data={ele}
+                      handleDelete={handleDelete}
+                    />
+                  ))
                 ) : (
                   <LoadSkeleton />
                 )}

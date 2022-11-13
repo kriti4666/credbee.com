@@ -12,12 +12,10 @@ usersData.get("/", async (req, res) => {
 });
 
 usersData.delete("/", async (req, res) => {
-  // console.log(req.body,res)
   try {
-    const user = await User.findOneAndDelete({
-      email: req.body.email,
+    const user = await User.findByIdAndDelete({
+      _id: req.body._id,
     });
-    console.log(1,user,req.body.email)
     res.send(user);
   } catch (e) {
     console.log(e)
