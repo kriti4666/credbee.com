@@ -89,7 +89,7 @@ export function Navbar() {
                         <span><Link to="./Login">Login</Link></span>
                     </div>
                     <div className="dropdown">
-                        <button><Link to="./Demo">Get a demo</Link></button>
+                        <button><Link to="/Demo">Get a demo</Link></button>
                     </div>
                 </div>
             </div>

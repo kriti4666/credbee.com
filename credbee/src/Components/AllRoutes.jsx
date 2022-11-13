@@ -9,6 +9,7 @@ import Pricing from "./Pricing/Pricing";
 import { ChakraProvider } from "@chakra-ui/react";
 import Signup from "./LoginSignup/Signup";
 import FullPage from "./homepage/fullPage";
+import User from "./User/User";
 
 const AllRoutes = () => {
   return (
@@ -29,6 +30,9 @@ const AllRoutes = () => {
       />
       <Route path="/admin" element={<ChakraProvider>
             <Admin/>
+          </ChakraProvider>} />
+          <Route path="/user" element={<ChakraProvider>
+            <User/>
           </ChakraProvider>} />
     </Routes>
   );

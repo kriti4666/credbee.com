@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BsArrowRight } from "react-icons/bs";
 import { HeroWrapper } from "./Hero.styles";
 import { Tab, Tabs } from "./Tabs/Tabs";
@@ -7,13 +7,56 @@ import { PricingDetailsWrapper } from "./PricingDetails.style";
 import { FormSectionWrapper } from "./FormSectionWrapper";
 import DemoForm from "./DemoForm/DemoForm";
 import { Navbar } from "../homepage/Navbar";
+import styled from "styled-components";
+import { ChakraProvider } from "@chakra-ui/react";
 
 let data = PlanPricingData;
 
 const Pricing = () => {
+  const [bpActive, setBpActive] = useState(0);
+  const [currencyActive, setCurrencyActive] = useState(5);
+  const [ info, setInfo ] = useState(data); 
+
+  const handleBpClick = (e) => {
+    const index = Number(e.target.id);
+    if(index !== bpActive ){
+      setBpActive(index);
+    }
+  }
+
+  const handleCurrencyClick = (e) => {
+    const index = Number(e.target.id);
+    if(index !== currencyActive ){
+      setCurrencyActive(index);
+    }
+  }
+
+  let currency = ["USD", "EUR", "GBP", "AUD", "CAD", "INR"];
+
+  let mat = [[[0, 249, 549, "Custom"], [0, 299, 599, "Custom"]],
+             [[0, 249, 549, "Custom"], [0, 299, 599, "Custom"]],
+             [[0, 199, 379, "Custom"], [0, 249, 449, "Custom"]],
+             [[0, 359, 729, "Custom"], [0, 419, 799, "Custom"]],
+             [[0, 329, 599, "Custom"], [0, 399, 699, "Custom"]],
+             [[0, "19,915", "43,915", "Custom"], [0, "23,890", "47,890", "Custom"]]]
+
+  let newAmounts = mat[currencyActive][bpActive];
+
+  for(let i=0; i<=3;i++){
+    data[i].amount = newAmounts[i];
+    data[i].currency = currency[currencyActive];
+    data[i].billingPeriod = (bpActive === 0) ? "billed annually" : <></>;  
+  }
+  useEffect(()=>{
+    setInfo(data);
+  },[])
+  // setInfo(data);
+
   return (
     <div>
-      <Navbar/>
+      <ChakraProvider>
+      <Navbar />
+      </ChakraProvider>
       <HeroWrapper>
         <div className="heroContainer">
           <div className="heroSection">
@@ -29,20 +72,20 @@ const Pricing = () => {
             </div>
             <div className="priceOptionBtns">
               <Tabs className="periodBtns">
-                <Tab active={true}>Annual</Tab>
-                <Tab active={false}>Monthly</Tab>
+                <Tab active={bpActive === 0} id="0" onClick={handleBpClick}>Annual</Tab>
+                <Tab active={bpActive === 1} id="1" onClick={handleBpClick}>Monthly</Tab>
               </Tabs>
               <Tabs className="currencyBtns">
-                <Tab active={true}>USD</Tab>
-                <Tab active={false}>EUR</Tab>
-                <Tab active={false}>GBP</Tab>
-                <Tab active={false}>AUD</Tab>
-                <Tab active={false}>CAD</Tab>
-                <Tab active={false}>INR</Tab>
+                <Tab active={currencyActive === 0} id="0" onClick={handleCurrencyClick}>USD</Tab>
+                <Tab active={currencyActive === 1} id="1" onClick={handleCurrencyClick}>EUR</Tab>
+                <Tab active={currencyActive === 2} id="2" onClick={handleCurrencyClick}>GBP</Tab>
+                <Tab active={currencyActive === 3} id="3" onClick={handleCurrencyClick}>AUD</Tab>
+                <Tab active={currencyActive === 4} id="4" onClick={handleCurrencyClick}>CAD</Tab>
+                <Tab active={currencyActive === 5} id="5" onClick={handleCurrencyClick}>INR</Tab>
               </Tabs>
             </div>
             <div className="planSummaryContainer">
-              {data.map((e, i) => (
+              {info.map((e, i) => (
                 <div key={i} className="planSummaryCard">
                   <h1 className="planSumName">{e.name}</h1>
                   <h3 className="planSumDesc">{e.description}</h3>
@@ -55,7 +98,7 @@ const Pricing = () => {
       <PricingDetailsWrapper>
         <div className="pricingContainer">
           <div className="pricingSection">
-            {data.map((e, i) => (
+            {info.map((e, i) => (
               <div key={i} className="pricingDetailsCard">
                 <h1 className="planTitle">{e.name}</h1>
                 <p className="planDesc">{e.description}</p>
@@ -94,9 +137,15 @@ const Pricing = () => {
       <FormSectionWrapper>
         <div className="formSectionContainer">
           <div className="leftFormSection">
-            <h1>We've helped thousands of subscription businesses streamline their billing workflow</h1>
+            <h1>
+              We've helped thousands of subscription businesses streamline their
+              billing workflow
+            </h1>
             <img src="https://webstatic.chargebee.com/assets/web/536/images/pricings/arrow.svg"></img>
-            <p>Switching to Credbee has been a big upgrade for us. They are solving the problems we'd have a year from now.</p>
+            <p>
+              Switching to Credbee has been a big upgrade for us. They are
+              solving the problems we'd have a year from now.
+            </p>
             <div className="customerDetails">
               <img src="https://webstatic.chargebee.com/assets/web/536/images/case-study/makespace/cto.png" />
               <div className="customerName">
@@ -105,12 +154,26 @@ const Pricing = () => {
               </div>
             </div>
             <div className="companyLogos">
-            <img width={"115px"} height={"26px" }src="https://webstatic.chargebee.com/assets/web/536/images/case-study/getaccept/ga-logo-black.png" />
-            <img  width={"115px"} height={"26px" } src="https://webstatic.chargebee.com/assets/web/536/images/customers/logos/sharetribe.svg" />
-            <img  width={"115px"} height={"26px" }src="https://webstatic.chargebee.com/assets/web/536/images/case-study/userlane/userlane.png" />
+              <img
+                width={"115px"}
+                height={"26px"}
+                src="https://webstatic.chargebee.com/assets/web/536/images/case-study/getaccept/ga-logo-black.png"
+              />
+              <img
+                width={"115px"}
+                height={"26px"}
+                src="https://webstatic.chargebee.com/assets/web/536/images/customers/logos/sharetribe.svg"
+              />
+              <img
+                width={"115px"}
+                height={"26px"}
+                src="https://webstatic.chargebee.com/assets/web/536/images/case-study/userlane/userlane.png"
+              />
             </div>
           </div>
-          <DemoForm></DemoForm>
+          <div className="DemoFormWrapper">
+            <DemoForm></DemoForm>
+          </div>
         </div>
       </FormSectionWrapper>
     </div>

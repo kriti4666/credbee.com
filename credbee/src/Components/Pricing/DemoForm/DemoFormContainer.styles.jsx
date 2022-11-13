@@ -3,7 +3,7 @@ import { down } from "styled-breakpoints";
 
 export const DemoFormContainer = styled.div`
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;500;700&display=swap");
-width: 45%;
+width: 95%;
 font-family: "IBM Plex Sans"
 font-size: 62.5%;
 margin: 50px 0px;
@@ -12,7 +12,7 @@ margin: 50px 0px;
     // border:1px solid;
     padding: 50px;
     display: flex;
-    width:85%;
+    width:100%;
     flex-direction: column;
     gap:20px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
