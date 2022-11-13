@@ -12,19 +12,41 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import {Box} from "@mui/system";
+import axios from "axios";
 import {useEffect} from "react";
 import {useState} from "react";
+import { useParams } from "react-router-dom";
 import { LoadSkeleton } from "./Skeleton";
 
 const User = () => {
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
+  const [data,setData] = useState([])
+
+  const param = useParams()
+
+  const getData = async () => {
+    try {
+      const res = await axios.get(`http://localhost:8080/user/${param.email}`);
+      setData(res.data);
+      setLoading(true);
+    } catch (e) {
+      setError(true);
+      console.log(e.message);
+    }
+  };
 
   useEffect(() => {
     setTimeout(() => {
+      getData()
       setLoading(true);
     }, 2000);
   }, []);
 
+
+  if(error){
+    return <Box>Error</Box>
+  }
   return (
     <Container maxW="100vw" py={{md: "100px", base: "0px"}}>
       <Center>
@@ -103,7 +125,7 @@ const User = () => {
                       <Text fontSize={25}>Name :</Text>
                     </Box>
                     <Box textAlign="left" width="250px">
-                      <Text fontSize={25}>Gunjan Kuthe</Text>
+                      <Text fontSize={25}>{data.name}</Text>
                     </Box>
                   </Flex>
                   <Flex
@@ -115,7 +137,7 @@ const User = () => {
                       <Text fontSize={25}>Email :</Text>
                     </Box>
                     <Box textAlign="left" width="250px">
-                      <Text fontSize={25}>masai@gmail.com</Text>
+                      <Text fontSize={25}>{data.email}</Text>
                     </Box>
                   </Flex>
                   <Flex
@@ -127,7 +149,7 @@ const User = () => {
                       <Text fontSize={25}>Phone No. :</Text>
                     </Box>
                     <Box textAlign="left" width="250px">
-                      <Text fontSize={25}>5415464564</Text>
+                      <Text fontSize={25}>{data.phone}</Text>
                     </Box>
                   </Flex>
                   <Flex
@@ -139,7 +161,7 @@ const User = () => {
                       <Text fontSize={25}>Company :</Text>
                     </Box>
                     <Box textAlign="left" width="250px">
-                      <Text fontSize={25}>Masai</Text>
+                      <Text fontSize={25}>{data.website}</Text>
                     </Box>
                   </Flex>
                   <Flex
@@ -151,7 +173,7 @@ const User = () => {
                       <Text fontSize={25}>Plan :</Text>
                     </Box>
                     <Box textAlign="left" width="250px">
-                      <Text fontSize={25}>Gold axkbsxsa</Text>
+                      <Text fontSize={25}>{data.plan}</Text>
                     </Box>
                   </Flex>
                 </>
