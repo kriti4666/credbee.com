@@ -9,7 +9,7 @@ const router = express.Router();
 //post api with end point signup and callback fx UserSignup
 router.post("/signup", UserSignup);
 router.post("/login", userLogin);
-router.post("/pricing", userDemoFrom);
+router.post("/demo", userDemoFrom);
 // router.get("/admin",getUsers)
 
 

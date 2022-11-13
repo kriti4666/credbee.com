@@ -7,7 +7,6 @@ import { PricingDetailsWrapper } from "./PricingDetails.style";
 import { FormSectionWrapper } from "./FormSectionWrapper";
 import DemoForm from "./DemoForm/DemoForm";
 import { Navbar } from "../homepage/Navbar";
-import styled from "styled-components";
 import { ChakraProvider } from "@chakra-ui/react";
 
 let data = PlanPricingData;

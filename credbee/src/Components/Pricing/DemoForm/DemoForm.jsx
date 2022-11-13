@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
-import { BsArrowRight } from "react-icons/bs";
-import { DemoFormContainer } from "./DemoFormContainer.styles";
-import axios from "axios";
+import React, { useRef, useState} from "react";
+import {BsArrowRight} from "react-icons/bs";
+import {DemoFormContainer} from "./DemoFormContainer.styles";
+import { demoForm } from "../../API/signupAPI";
 
 const DemoForm = () => {
   const initialValues = {
@@ -17,21 +17,20 @@ const DemoForm = () => {
   const form = useRef();
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormValues({ ...formValues, [name]: value });
+    const {name, value} = e.target;
+    setFormValues({...formValues, [name]: value});
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setFormErrors(validate(formValues));
     setIsSubmit(true);
+    if (Object.keys(formErrors).length === 0 && isSubmit) {
+      await demoForm(formValues)
+    }
+    setFormValues(initialValues)
   };
 
-  useEffect(() => {
-    if (Object.keys(formErrors).length === 0 && isSubmit) {
-      axios.post("", formValues);
-    }
-  }, [formErrors]);
 
   const validate = (values) => {
     const errors = {};
@@ -67,7 +66,6 @@ const DemoForm = () => {
     return errors;
   };
 
-  console.log(formValues);
 
   return (
     <DemoFormContainer className="DemoFormContainer">
@@ -93,7 +91,7 @@ const DemoForm = () => {
           onChange={handleChange}
           name="email"
         />
-        {formErrors.email ? <p>{formErrors.email}</p>: <></>}
+        {formErrors.email ? <p>{formErrors.email}</p> : <></>}
         <div className="phoneNumber">
           <div class="select-list">
             <select name="course_type" id="course_type">
@@ -751,7 +749,7 @@ const DemoForm = () => {
             name="phone"
           />
         </div>
-        {formErrors.phone?<p>{formErrors.phone}</p>:<></>}
+        {formErrors.phone ? <p>{formErrors.phone}</p> : <></>}
         <input
           type="text"
           className="website"
@@ -759,7 +757,7 @@ const DemoForm = () => {
           onChange={handleChange}
           name="website"
         ></input>
-        {formErrors.website?<p>{formErrors.website}</p>: <></>}
+        {formErrors.website ? <p>{formErrors.website}</p> : <></>}
         <label className="labelHq">
           Is your company headquartered in India?
         </label>
@@ -780,7 +778,7 @@ const DemoForm = () => {
           <input type="radio" name="plan" value="Enterprise" />
           <label>Enterprise</label>
         </div>
-        {formErrors.plan?<p>{formErrors.plan}</p>: <></>}
+        {formErrors.plan ? <p>{formErrors.plan}</p> : <></>}
         <label>What problem can Credbee solve for you?</label>
         <textarea type="text" placeholder="Write Something..."></textarea>
         <div className="DemoCTABtn" onClick={handleSubmit}>

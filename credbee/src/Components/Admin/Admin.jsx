@@ -16,12 +16,14 @@ import {
 import {Box} from "@mui/system";
 import {useEffect} from "react";
 import {useState} from "react";
-import { LoadSkeleton } from "./LoadSkeleton";
+import {LoadSkeleton} from "./LoadSkeleton";
 import {SingleUser} from "./SingleUser";
 import {usersData} from "./user";
+import axios from "axios";
 
 const Admin = () => {
-  const [loading,setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
   const [allData, setAllData] = useState([]);
   const [state, setState] = useState([]);
   const [inputTag, setInputTag] = useState("");
@@ -32,7 +34,10 @@ const Admin = () => {
   };
 
   const handleFilter = ({target}) => {
-    const filtered = target.value==="All"?[...allData]:allData.filter((ele) => ele.gender === target.value);
+    const filtered =
+      target.value === "All"
+        ? [...allData]
+        : allData.filter((ele) => ele.gender === target.value);
     setState(filtered);
   };
 
@@ -60,14 +65,28 @@ const Admin = () => {
     setState(sorted);
   };
 
+  const getData = async () => {
+    try {
+      const res = await axios.get("http://localhost:8080/admin");
+      console.log(res.data);
+      setLoading(true);
+    } catch (e) {
+      setError(true);
+      console.log(e.message);
+    }
+  };
   useEffect(() => {
-    
-    setTimeout(()=>{
+    setTimeout(() => {
+      getData();
       setAllData(usersData);
       setState(usersData);
-      setLoading(true)
-    },2000)
+      setLoading(true);
+    }, 2000);
   }, []);
+
+  if (error) {
+    return <Text>Error...</Text>;
+  }
 
   return (
     <Container maxW="100vw" py={{md: "100px", base: "0px"}}>

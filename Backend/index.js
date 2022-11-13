@@ -7,7 +7,7 @@ import bodyParser from "body-parser";
 import Connection from "./Database/db.js";
 import router from "./Routes/route.js";
 import usersData from "./Routes/admin.route.js"
-// import singleUser from "./Routes/user.route.js"
+import singleUser from "./Routes/user.route.js"
 
 const app = express();
 app.use(express.json());
@@ -25,7 +25,7 @@ dontenv.config();
 //router based on api call
 app.use("/admin",usersData)
 app.use("/", router)
-// app.use("/user",singleUser)
+app.use("/user",singleUser)
 
 //extraction of environment variables for DB connectivity from .env file
 const USERNAME = process.env.DB_USERNAME;

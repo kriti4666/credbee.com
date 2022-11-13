@@ -1,7 +1,9 @@
 import { Box, Typography, styled, TextField, Checkbox, FormGroup, FormControlLabel, Button, Grid } from "@mui/material"
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 import { authenticateSignup } from "../API/signupAPI";
+import {LOGO} from "../LOGO/LOGO"
 
 const LeftBox = styled(Grid)`
     width: 480px;
@@ -74,109 +76,202 @@ const Signup = () => {
     }
 
     return (
-        <Grid style={{ display: "flex" }}>
+      <Grid style={{display: "flex"}}>
+        {/* Left side of the page start here */}
 
-            {/* Left side of the page start here */}
-
-            <LeftBox sx={{
-                display: {
-                    xs: 'none',
-                    sm: 'none',
-                    md: 'none',
-                    lg: 'block'
-                }
-
-            }} >
-                <Box sx={{
-                    background: "#B4B4B4",
-                    textAlign: "center",
-                    height: 400,
-                }} >
-                    <DP src="https://webstatic.chargebee.com/assets/web/535/images/signup/customers/dailius-wilson-getaccept.png"></DP>
-                </Box>
-                <Box style={{ background: "#38039A", color: "white", textAlign: "center", padding: "20px" }}>
-                    <Typography style={{ fontSize: "30px", fontWeight: "930", lineHeight: 3 }} >Dailius Wilson</Typography>
-                    <Typography style={{ lineHeight: -90, marginTop: -25, fontWeight: "200" }}>VP Sales & Growth</Typography>
-                </Box>
-                <Box style={{ background: "#500AD2", padding: 60, textAlign: "center" }}>
-                    <Typography style={{ color: "white" }}>Chargebee is a fantastic solution that really meets the needs of any SaaS business. Our revenue grew 4x in 12 months, using Chargebee. </Typography>
-                    <ClientCompanyImg src="https://webstatic.chargebee.com/assets/web/535/images/signup/customers/get-accept-logo.svg"></ClientCompanyImg>
-                    <Typography style={{ marginTop: 90, color: "#FCA268", textTransform: "uppercase" }} >Built For Hyper-growth</Typography>
-
-                </Box>
-            </LeftBox>
-
-            {/* Left side of the page end here */}
-
-            {/* Right side of the page start here */}
-
-            <RightBox
-                sx={{
-                    width: {
-                        xs: 300,
-                        sm: 300,
-                        md: 800,
-                        lg: 800
-                    }, marginLeft: 20
-                }}
+        <LeftBox
+          sx={{
+            display: {
+              xs: "none",
+              sm: "none",
+              md: "none",
+              lg: "block",
+            },
+          }}
+        >
+          <Box
+            sx={{
+              background: "#B4B4B4",
+              textAlign: "center",
+              height: 400,
+            }}
+          >
+            <DP src="https://webstatic.chargebee.com/assets/web/535/images/signup/customers/dailius-wilson-getaccept.png"></DP>
+          </Box>
+          <Box
+            style={{
+              background: "#38039A",
+              color: "white",
+              textAlign: "center",
+              padding: "20px",
+            }}
+          >
+            <Typography
+              style={{fontSize: "30px", fontWeight: "930", lineHeight: 3}}
             >
-                <Box style={{ display: "flex", justifyContent: "space-between" }}>
-                    <Logo src="https://www.chargebee.com/static/resources/brand/chargebee-logo-black.svg"></Logo>
-                    <Typography style={{ fontSize: "20px", marginTop: "10px", fontWeight: "600" }}>Login →</Typography>
-                </Box>
+              Dailius Wilson
+            </Typography>
+            <Typography
+              style={{lineHeight: -90, marginTop: -25, fontWeight: "200"}}
+            >
+              VP Sales & Growth
+            </Typography>
+          </Box>
+          <Box
+            style={{background: "#500AD2", padding: 60, textAlign: "center"}}
+          >
+            <Typography style={{color: "white"}}>
+              Chargebee is a fantastic solution that really meets the needs of
+              any SaaS business. Our revenue grew 4x in 12 months, using
+              Chargebee.{" "}
+            </Typography>
+            <ClientCompanyImg src="https://webstatic.chargebee.com/assets/web/535/images/signup/customers/get-accept-logo.svg"></ClientCompanyImg>
+            <Typography
+              style={{
+                marginTop: 90,
+                color: "#FCA268",
+                textTransform: "uppercase",
+              }}
+            >
+              Built For Hyper-growth
+            </Typography>
+          </Box>
+        </LeftBox>
 
-                <Typography style={{ fontSize: "20px", fontWeight: "600", marginTop: "40px", marginRight: 500 }} >Create Your Sandbox Account </Typography>
+        {/* Left side of the page end here */}
 
-                <SignupSection style={{ height: 600, marginTop: "10px" }}>
-                    <Typography style={{ color: "#818181", fontSize: "20px", fontWeight: "600", marginRight: 590 }} >Work email</Typography>
-                    <TextField
-                        style={{ marginTop: "10px", width: "700px", }}
-                        variant="outlined"
-                        label='Enter Email'
-                        name="email"
-                        onChange={(e) => onInputChange(e)}
-                        value={signup.email}
-                    />
-                    <Typography style={{ color: "#818181", marginTop: "30px", fontSize: "20px", fontWeight: "600", marginRight: 550 }}>Phone Number</Typography>
-                    <TextField
-                        style={{ marginTop: "10px", width: "700px" }}
-                        variant="outlined"
-                        label='Enter Phonenumber'
-                        name="phone"
-                        onChange={(e) => onInputChange(e)}
-                        value={signup.phone}
-                    />
-                    <Typography style={{ color: "#818181", marginTop: "30px", fontSize: "20px", fontWeight: "600", marginRight: 600 }}>Password</Typography>
-                    <TextField
-                        style={{ marginTop: "10px", width: "700px" }}
-                        variant="outlined"
-                        label='Enter Password'
-                        name="password"
-                        onChange={(e) => onInputChange(e)}
-                        value={signup.password}
-                    />
-                    <FormGroup style={{ marginTop: "20px", color: "#818181", marginLeft: 12 }} >
-                        <FormControlLabel control={<Checkbox />} label="I want to be notified about the awesome happenings* at Chargebee " />
-                    </FormGroup>
-                    <Button
-                        variant="contained"
-                        style={{ padding: "20px", width: "200px", marginTop: "20px", background: "#500AD2" }}
-                        onClick={() => signupUser()}
-                    >
-                        Complete Signup →
-                    </Button>
-                    <Typography style={{ marginTop: "35px", color: "#818181" }} >By clicking on Complete Signup, you agree to our Terms and you acknowledge having
-                        <br></br> read our Privacy Notice</Typography>
-                    <Typography style={{ marginTop: "10px", fontSize: "15px", color: "#818181" }} >*This includes periodic newsletters, emails about usage tips, billing practices, and other communications. You can opt out anytime within the app. </Typography>
-                </SignupSection>
-                <LastCustomerImage src="https://webstatic.chargebee.com/assets/web/535/images/signup/customers/chargebee-customers.svg"></LastCustomerImage>
-            </RightBox>
+        {/* Right side of the page start here */}
 
-            {/* Right side of the page end here */}
+        <RightBox
+          sx={{
+            width: {
+              xs: 300,
+              sm: 300,
+              md: 800,
+              lg: 800,
+            },
+            marginLeft: 20,
+          }}
+        >
+          <Box style={{display: "flex", justifyContent: "space-between"}}>
+            <Link to="/">
+              <LOGO fill={"black"} />
+            </Link>
+            <Typography
+              style={{fontSize: "20px", marginTop: "10px", fontWeight: "600"}}
+            >
+                
+              <Link style={{textDecoration:"none",color:"black"}} to="/login">Login →</Link>
+            </Typography>
+          </Box>
 
+          <Typography
+            style={{
+              fontSize: "20px",
+              fontWeight: "600",
+              marginTop: "40px",
+              marginRight: 500,
+            }}
+          >
+            Create Your Sandbox Account{" "}
+          </Typography>
 
-        </Grid>
-    )
+          <SignupSection style={{height: 600, marginTop: "10px"}}>
+            <Typography
+              style={{
+                color: "#818181",
+                fontSize: "20px",
+                fontWeight: "600",
+                marginRight: 590,
+              }}
+            >
+              Work email
+            </Typography>
+            <TextField
+              style={{marginTop: "10px", width: "700px"}}
+              variant="outlined"
+              label="Enter Email"
+              name="email"
+              onChange={(e) => onInputChange(e)}
+              value={signup.email}
+            />
+            <Typography
+              style={{
+                color: "#818181",
+                marginTop: "30px",
+                fontSize: "20px",
+                fontWeight: "600",
+                marginRight: 550,
+              }}
+            >
+              Phone Number
+            </Typography>
+            <TextField
+              style={{marginTop: "10px", width: "700px"}}
+              variant="outlined"
+              label="Enter Phonenumber"
+              name="phone"
+              onChange={(e) => onInputChange(e)}
+              value={signup.phone}
+            />
+            <Typography
+              style={{
+                color: "#818181",
+                marginTop: "30px",
+                fontSize: "20px",
+                fontWeight: "600",
+                marginRight: 600,
+              }}
+            >
+              Password
+            </Typography>
+            <TextField
+              style={{marginTop: "10px", width: "700px"}}
+              variant="outlined"
+              label="Enter Password"
+              name="password"
+              onChange={(e) => onInputChange(e)}
+              value={signup.password}
+            />
+            <FormGroup
+              style={{marginTop: "20px", color: "#818181", marginLeft: 12}}
+            >
+              <FormControlLabel
+                control={<Checkbox />}
+                label="I want to be notified about the awesome happenings* at Chargebee "
+              />
+            </FormGroup>
+            <Button
+              variant="contained"
+              style={{
+                padding: "20px",
+                width: "200px",
+                marginTop: "20px",
+                background: "#500AD2",
+              }}
+              onClick={() => signupUser()}
+            >
+              Complete Signup →
+            </Button>
+            <Typography style={{marginTop: "35px", color: "#818181"}}>
+              By clicking on Complete Signup, you agree to our Terms and you
+              acknowledge having
+              <br></br> read our Privacy Notice
+            </Typography>
+            <Typography
+              style={{marginTop: "10px", fontSize: "15px", color: "#818181"}}
+            >
+              *This includes periodic newsletters, emails about usage tips,
+              billing practices, and other communications. You can opt out
+              anytime within the app.{" "}
+            </Typography>
+          </SignupSection>
+          <LastCustomerImage src="https://webstatic.chargebee.com/assets/web/535/images/signup/customers/chargebee-customers.svg"></LastCustomerImage>
+        </RightBox>
+
+        {/* Right side of the page end here */}
+      </Grid>
+    );
 
 }
 
