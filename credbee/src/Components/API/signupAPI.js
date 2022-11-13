@@ -2,7 +2,7 @@
 import axios from "axios"
 
 //server URL
-const URL = 'http://localhost:8080'
+const URL = 'https://credbee-backend.onrender.com'
 
 export const authenticateSignup = async (data) => {
     try {
