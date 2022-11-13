@@ -3,7 +3,7 @@ import "../Customers/Customers.Module.css";
 import { Navbar } from "../homepage/Navbar";
 import "../homepage/navbar.css";
 import { data } from "./CustomersData";
-import { Image } from "@chakra-ui/react";
+import { Button, Image, Text } from "@chakra-ui/react";
 
 const Customers = () => {
   console.log(data);
@@ -13,38 +13,36 @@ const Customers = () => {
 
       <Navbar />
       <div className="c-head">
-        <h1>
+
+        <Text className="head" fontSize="5xl" as="b">
           Chargebee powers
           <br />
           subscriptions for
           <br />
           businesses of all sizes.
-        </h1>
-        <div>
-          <div>
-            <p>Sign up for free</p>
-          </div>
-          <div>
-            <p>Talk to us!</p>
-          </div>
+        </Text>
+
+        <div className="signup">
+          <Text fontSize="xl">Sign Up for free</Text>
+          <Text fontSize="xl" as="b">Talk to us!</Text>
         </div>
       </div>
       <div className="c-headBox">
         <div>
           <div className="leftBox">
             <img
-              width="100px"
+          
               src="https://webstatic.chargebee.com/assets/web/535/images/home/testimonial/cb-study.png"
               alt=""
             />
-            <p>
+            <Text fontSize="xl">
               ... Integration was easy and the{" "}
               <strong>
                 customer <br /> support provided was excellent
               </strong>
               . This is huge <br /> considering how deficient many players in
               the space are when ...
-            </p>
+            </Text>
             <div>
               <img
                 src="https://webstatic.chargebee.com/assets/web/535/images/case-study/voitek.jpeg"
@@ -56,18 +54,21 @@ const Customers = () => {
             </div>
           </div>
         </div>
+        <div className="imgp">
+          <img width="500px" src="https://webstatic.chargebee.com/assets/web/536/images/case-study/whiteboard/whiteboard-banner.jpg" alt="" />
         <div className="rightBox">
           <img
-            width="100px"
+            width="200px"
             src="https://webstatic.chargebee.com/assets/web/535/images/case-study/whiteboard/whiteboard-logo-white.png"
             alt="img"
           />
-          <p>
+          <Text fontSize="xl">
             How Whiteboard reduced Churn by 100% using Chargebee and increased
             their MRR by 35% with improved billing operations
-          </p>
+          </Text>
 
-          <span>READ THE STORY - </span>
+          <span>READ THE STORY → </span>
+        </div>
         </div>
       </div>
 
@@ -93,30 +94,33 @@ const Customers = () => {
       </div>
 
       <div className="c-headBox">
-        <div className="rightBox">
+       <div className="imgb2">
+        <img width="300px" src="https://webstatic.chargebee.com/assets/web/536/images/case-study/freshdesk/fd-wall.jpg" alt="" />
+       <div className="rightBox">
           <img
             width="100px"
             src="https://webstatic.chargebee.com/assets/web/535/images/customers/logos/transparent/freshdesk.png"
             alt="img"
           />
-          <p>
+          <Text fontSize="xl">
             From 500 to 80,000 Customers:
             <br />
             How Freshdesk Unlocked Massive Scale
-          </p>
+          </Text>
 
-          <span>READ THE STORY - </span>
+          <span>READ THE STORY → </span>
         </div>
+       </div>
         <div className="leftBox">
           <img
-            width="100px"
+            width="200px"
             src="https://www.chargebee.com/static/resources/customers/freedom-logo.png"
             alt=""
           />
-          <p>
+          <Text fontSize="xl">
             We didn't have another choice, we never had to choose between
             Chargebee and another provider. Chargebee was the clear winner.
-          </p>
+          </Text>
           <div>
             <img
               src="https://webstatic.chargebee.com/assets/web/535/images/case-study/freedom-fred.png"
@@ -167,16 +171,23 @@ const Customers = () => {
 
       {/*********************************               user Table               ***************************/}
 
-      <div className="c-data">
-        {
-          data?.map((el) => {
-            return <div className="details">
-              <img src={el.logo} alt="logo"  />
-              <span>{el.description}</span>
-              <img src={el.link} alt="link" />
-            </div>
-          })
-        }
+      <div className="bgcolor">
+        <div className="c-data">
+          {
+            data?.map((el) => {
+              return <div className="details">
+              <div>
+              <img width="200px" src={el.url} alt="logo"  />
+              <Text fontSize="xl">{el.description}</Text>
+              </div>
+                <div>
+                <a href={el.link}><strong>→</strong></a>
+                </div>
+
+              </div>
+            })
+          }
+        </div>
       </div>
     </div>
   );

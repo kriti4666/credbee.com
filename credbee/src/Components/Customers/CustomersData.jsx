@@ -83,7 +83,7 @@ export const data = [
   },
   {
     url:
-      "https://images.ctfassets.net/a7hvy8sclsq6/1guqVnCk6AF398SeSxLHzY/1b7a35e59ec0214c8ca4d1307858f4a2/Kabo-logo.pngrake_Software-logo.png",
+      "https://images.ctfassets.net/a7hvy8sclsq6/1guqVnCk6AF398SeSxLHzY/1b7a35e59ec0214c8ca4d1307858f4a2/Kabo-logo.png",
     description:
       "How Kabo Increased AOV by 25% to Take Their Business Up, Pup, and Away!",
     link: "https://www.chargebee.com/customers/syncspider/",
