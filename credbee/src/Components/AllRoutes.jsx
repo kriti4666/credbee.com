@@ -14,12 +14,19 @@ import User from "./User/User";
 const AllRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<FullPage/>} />
+      <Route path="/" element={<FullPage />} />
       <Route path="/login" element={<Login />} />
-      <Route path='/signup' element={<Signup/>}/>
+      <Route path="/signup" element={<Signup />} />
       <Route path="/pricing" element={<Pricing />} />
       <Route path="/demo" element={<Demo />} />
-      <Route path="/customers" element={<Customers />} />
+      <Route
+        path="/customers"
+        element={
+          <ChakraProvider>
+            <Customers />
+          </ChakraProvider>
+        }
+      />
       <Route
         path="/partners"
         element={
@@ -28,12 +35,22 @@ const AllRoutes = () => {
           </ChakraProvider>
         }
       />
-      <Route path="/admin" element={<ChakraProvider>
-            <Admin/>
-          </ChakraProvider>} />
-          <Route path="/user" element={<ChakraProvider>
-            <User/>
-          </ChakraProvider>} />
+      <Route
+        path="/admin"
+        element={
+          <ChakraProvider>
+            <Admin />
+          </ChakraProvider>
+        }
+      />
+      <Route
+        path="/user"
+        element={
+          <ChakraProvider>
+            <User />
+          </ChakraProvider>
+        }
+      />
     </Routes>
   );
 };

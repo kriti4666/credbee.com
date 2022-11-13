@@ -1,33 +1,17 @@
-import axios from "axios";
-import React, { useEffect } from "react";
-import { useState } from "react";
+import React from "react";
 import "../Customers/Customers.Module.css";
 import { Navbar } from "../homepage/Navbar";
 import "../homepage/navbar.css";
+import { data } from "./CustomersData";
+import { Image } from "@chakra-ui/react";
 
 const Customers = () => {
-  const [data, setData] = useState([]);
-
-  const getData = () => {
-    return axios.get("https://reqres.in/api/users?");
-  };
-
-  useEffect(() => {
-    getData()
-      .then((res) => {
-        setData(res.data.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
-
   console.log(data);
   return (
     <div className="customer">
       {/**********************             Top section            **********************/}
 
-      <Navbar/>
+      <Navbar />
       <div className="c-head">
         <h1>
           Chargebee powers
@@ -172,7 +156,7 @@ const Customers = () => {
       <div className="c-youtube">
         <iframe
           width="750"
-          height="446"
+          height="447"
           src="https://www.youtube.com/embed/R9XgyoLQ9qw"
           title="How Businesses scale globally with Chargebee"
           frameborder="0"
@@ -183,15 +167,16 @@ const Customers = () => {
 
       {/*********************************               user Table               ***************************/}
 
-      <div className="c-table">
-          {
-            data?.map((el) => {
-              return <div>
-                <img src={el.avatar} alt="" />
-                <span>{el.email}</span>
-              </div>
-            })
-          }
+      <div className="c-data">
+        {
+          data?.map((el) => {
+            return <div className="details">
+              <img src={el.logo} alt="logo"  />
+              <span>{el.description}</span>
+              <img src={el.link} alt="link" />
+            </div>
+          })
+        }
       </div>
     </div>
   );
