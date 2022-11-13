@@ -84,6 +84,7 @@ export const HeroWrapper = styled.div`
   .planSumDesc {
     font-size: 1.4em;
     font-weight: 400;
+    color:white;
   }
 
   ${down("xxl")} {
