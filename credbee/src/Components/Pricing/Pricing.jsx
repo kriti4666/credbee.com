@@ -14,47 +14,67 @@ let data = PlanPricingData;
 const Pricing = () => {
   const [bpActive, setBpActive] = useState(0);
   const [currencyActive, setCurrencyActive] = useState(5);
-  const [ info, setInfo ] = useState(data); 
+  const [info, setInfo] = useState(data);
 
   const handleBpClick = (e) => {
     const index = Number(e.target.id);
-    if(index !== bpActive ){
+    if (index !== bpActive) {
       setBpActive(index);
     }
-  }
+  };
 
   const handleCurrencyClick = (e) => {
     const index = Number(e.target.id);
-    if(index !== currencyActive ){
+    if (index !== currencyActive) {
       setCurrencyActive(index);
     }
-  }
+  };
 
   let currency = ["USD", "EUR", "GBP", "AUD", "CAD", "INR"];
 
-  let mat = [[[0, 249, 549, "Custom"], [0, 299, 599, "Custom"]],
-             [[0, 249, 549, "Custom"], [0, 299, 599, "Custom"]],
-             [[0, 199, 379, "Custom"], [0, 249, 449, "Custom"]],
-             [[0, 359, 729, "Custom"], [0, 419, 799, "Custom"]],
-             [[0, 329, 599, "Custom"], [0, 399, 699, "Custom"]],
-             [[0, "19,915", "43,915", "Custom"], [0, "23,890", "47,890", "Custom"]]]
+  let mat = [
+    [
+      [0, 249, 549, "Custom"],
+      [0, 299, 599, "Custom"],
+    ],
+    [
+      [0, 249, 549, "Custom"],
+      [0, 299, 599, "Custom"],
+    ],
+    [
+      [0, 199, 379, "Custom"],
+      [0, 249, 449, "Custom"],
+    ],
+    [
+      [0, 359, 729, "Custom"],
+      [0, 419, 799, "Custom"],
+    ],
+    [
+      [0, 329, 599, "Custom"],
+      [0, 399, 699, "Custom"],
+    ],
+    [
+      [0, "19,915", "43,915", "Custom"],
+      [0, "23,890", "47,890", "Custom"],
+    ],
+  ];
 
   let newAmounts = mat[currencyActive][bpActive];
 
-  for(let i=0; i<=3;i++){
+  for (let i = 0; i <= 3; i++) {
     data[i].amount = newAmounts[i];
     data[i].currency = currency[currencyActive];
-    data[i].billingPeriod = (bpActive === 0) ? "billed annually" : <></>;  
+    data[i].billingPeriod = bpActive === 0 ? "billed annually" : <></>;
   }
-  useEffect(()=>{
+  useEffect(() => {
     setInfo(data);
-  },[])
+  }, []);
   // setInfo(data);
 
   return (
     <div>
       <ChakraProvider>
-      <Navbar />
+        <Navbar />
       </ChakraProvider>
       <HeroWrapper>
         <div className="heroContainer">
@@ -71,16 +91,56 @@ const Pricing = () => {
             </div>
             <div className="priceOptionBtns">
               <Tabs className="periodBtns">
-                <Tab active={bpActive === 0} id="0" onClick={handleBpClick}>Annual</Tab>
-                <Tab active={bpActive === 1} id="1" onClick={handleBpClick}>Monthly</Tab>
+                <Tab active={bpActive === 0} id="0" onClick={handleBpClick}>
+                  Annual
+                </Tab>
+                <Tab active={bpActive === 1} id="1" onClick={handleBpClick}>
+                  Monthly
+                </Tab>
               </Tabs>
               <Tabs className="currencyBtns">
-                <Tab active={currencyActive === 0} id="0" onClick={handleCurrencyClick}>USD</Tab>
-                <Tab active={currencyActive === 1} id="1" onClick={handleCurrencyClick}>EUR</Tab>
-                <Tab active={currencyActive === 2} id="2" onClick={handleCurrencyClick}>GBP</Tab>
-                <Tab active={currencyActive === 3} id="3" onClick={handleCurrencyClick}>AUD</Tab>
-                <Tab active={currencyActive === 4} id="4" onClick={handleCurrencyClick}>CAD</Tab>
-                <Tab active={currencyActive === 5} id="5" onClick={handleCurrencyClick}>INR</Tab>
+                <Tab
+                  active={currencyActive === 0}
+                  id="0"
+                  onClick={handleCurrencyClick}
+                >
+                  USD
+                </Tab>
+                <Tab
+                  active={currencyActive === 1}
+                  id="1"
+                  onClick={handleCurrencyClick}
+                >
+                  EUR
+                </Tab>
+                <Tab
+                  active={currencyActive === 2}
+                  id="2"
+                  onClick={handleCurrencyClick}
+                >
+                  GBP
+                </Tab>
+                <Tab
+                  active={currencyActive === 3}
+                  id="3"
+                  onClick={handleCurrencyClick}
+                >
+                  AUD
+                </Tab>
+                <Tab
+                  active={currencyActive === 4}
+                  id="4"
+                  onClick={handleCurrencyClick}
+                >
+                  CAD
+                </Tab>
+                <Tab
+                  active={currencyActive === 5}
+                  id="5"
+                  onClick={handleCurrencyClick}
+                >
+                  INR
+                </Tab>
               </Tabs>
             </div>
             <div className="planSummaryContainer">
@@ -117,7 +177,10 @@ const Pricing = () => {
                 <ul className="featuresList">
                   {e.featureDetails.map((f, j) => (
                     <li key={j} className="listItem">
-                      <img src="https://webstatic.chargebee.com/assets/web/536/images/pricings/check-gradient.svg" />
+                      <img
+                        src="https://webstatic.chargebee.com/assets/web/536/images/pricings/check-gradient.svg"
+                        alt="img"
+                      />
                       <span>{f.featureName}</span>
                     </li>
                   ))}
@@ -140,14 +203,17 @@ const Pricing = () => {
               We've helped thousands of subscription businesses streamline their
               billing workflow
             </h1>
-            <img src="https://webstatic.chargebee.com/assets/web/536/images/pricings/arrow.svg"></img>
+            <img
+              src="https://webstatic.chargebee.com/assets/web/536/images/pricings/arrow.svg"
+              alt="img"
+            ></img>
             <p>
               Switching to Credbee has been a big upgrade for us. They are
               solving the problems we'd have a year from now.
             </p>
             <div className="customerDetails">
               <img src="https://webstatic.chargebee.com/assets/web/536/images/case-study/makespace/cto.png" />
-              <div className="customerName">
+              <div className="customerName" alt="img">
                 <h4>Matthew Busel</h4>
                 <p>Product Manager, MakeSpace</p>
               </div>
@@ -157,16 +223,19 @@ const Pricing = () => {
                 width={"115px"}
                 height={"26px"}
                 src="https://webstatic.chargebee.com/assets/web/536/images/case-study/getaccept/ga-logo-black.png"
+                alt="img"
               />
               <img
                 width={"115px"}
                 height={"26px"}
                 src="https://webstatic.chargebee.com/assets/web/536/images/customers/logos/sharetribe.svg"
+                alt="img"
               />
               <img
                 width={"115px"}
                 height={"26px"}
                 src="https://webstatic.chargebee.com/assets/web/536/images/case-study/userlane/userlane.png"
+                alt="img"
               />
             </div>
           </div>

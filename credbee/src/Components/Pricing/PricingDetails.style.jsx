@@ -119,7 +119,7 @@ export const PricingDetailsWrapper = styled.section`
   }
 
   .listItem>span{
-    font-size: 1.4em;
+    font-size: 1em;
   }
 
   .comparePlans {

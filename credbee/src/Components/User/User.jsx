@@ -12,18 +12,22 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import {Box} from "@mui/system";
-import {useEffect} from "react";
+import {useContext, useEffect} from "react";
 import {useState} from "react";
 import { LoadSkeleton } from "./Skeleton";
+import { ContextAuth } from "../AuthContextProvider.jsx/AuthContextProvider";
 
 const User = () => {
   const [loading, setLoading] = useState(false);
+  const { authStatus, handleAuthStatus } = useContext(ContextAuth);
 
   useEffect(() => {
     setTimeout(() => {
       setLoading(true);
     }, 2000);
   }, []);
+
+  console.log(authStatus);
 
   return (
     <Container maxW="100vw" py={{md: "100px", base: "0px"}}>

@@ -1,13 +1,13 @@
 import styled from "styled-components";
-import { down } from "styled-breakpoints";
+import { down, only, up } from "styled-breakpoints";
 
 export const Tabs = styled.div`
   background: #905dcd;
-  border-radius: 20px;
+  border-radius: 40px;
   overflow: visible;
 `;
 export const Tab = styled.button`
-    border-radius: 20px;
+    border-radius: 40px;
     border: none;
     padding: 0.5em 1.5em;
     cursor: pointer;
@@ -19,5 +19,9 @@ export const Tab = styled.button`
 
     ${down("sm")}{
       padding: 0.5em 0.75em;
+    }
+    ${up("xl")}{
+      padding: 1em ,2em;
+      font-size: 2em;
     }
 `;
