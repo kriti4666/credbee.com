@@ -10,12 +10,14 @@ import usersData from "./Routes/admin.route.js"
 // import singleUser from "./Routes/user.route.js"
 
 const app = express();
-app.use(cors());
+app.use(express.json());
+
 //to make the body in json format
 app.use(bodyParser.json({ extended: true }))
 //url parse to remove bluder spaces
 app.use(bodyParser.urlencoded({ extended: true }))
 const PORT = 8080;
+app.use(cors());
 
 //dot env file configuration
 dontenv.config();
