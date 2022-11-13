@@ -1,10 +1,10 @@
-export const LOGO = ({ fill }) => {
+export const LOGO = ({ fill, width=100, height=100 }) => {
   return (
     <svg
       version="1.0"
       xmlns="http://www.w3.org/2000/svg"
-      width="100.000000pt"
-      height="100.000000pt"
+      width={`${width}pt`}
+      height={`${height}pt`}
       viewBox="0 0 500.000000 500.000000"
       preserveAspectRatio="xMidYMid meet"
     >

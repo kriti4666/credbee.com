@@ -2,6 +2,7 @@ import React from 'react'
 import DemoForm from '../Pricing/DemoForm/DemoForm'
 import { DemoBottomSection, DemoHeroSection } from './Demo.styles'
 import { LOGO } from '../LOGO/LOGO';
+import { Link } from 'react-router-dom';
 
 const Demo = () => {
   return (
@@ -11,9 +12,9 @@ const Demo = () => {
             <div className="BGshape"></div>
             <div className='DemoHeroContainer'>
                     <div className="header">
-                        {/* <Link to="/"> */}
-                        <LOGO fill="white"/>
-                        {/* </Link> */}
+                        <Link to="/">
+                            <LOGO fill="white"/>
+                        </Link>
                     </div>
                     <div className='mainHeroSection'>
                         <div className='leftSection'>

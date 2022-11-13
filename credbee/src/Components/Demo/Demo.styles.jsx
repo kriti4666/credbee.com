@@ -176,6 +176,9 @@ export const DemoBottomSection = styled.div`
         display: block;
         max-width: 100%;
     }
+    .customerAvatar{
+        display:none;
+    }
 
     ${down("lg")}{
         .leftSection{
@@ -206,6 +209,7 @@ export const DemoBottomSection = styled.div`
             border-radius: 50%;
             border: 2px solid #ccc;
             overflow: hidden;
+            display: block;
         }
         .customerAvatar>img{
             width: 100%;
