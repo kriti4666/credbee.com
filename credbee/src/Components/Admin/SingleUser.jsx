@@ -1,21 +1,8 @@
 import {Button, Container, Grid, GridItem, Stack, Text} from "@chakra-ui/react";
-import axios from "axios";
 
 export const SingleUser = (props) => {
   const {data,handleDelete} = props;
 
-  // const deleteData = async (id) => {
-  //   const res = await axios.delete("/admin/:id", {_id: id});
-  //   console.log(res);
-  //   return res
-  // };
-
-  // const handleDelete =  async(id) => {
-  // //    const res = await deleteData(id);
-  // //  console.log(res)
-
-  //  axios.delete("/admin",{_id:id}).then(res=>console.log(res))
-  // };
   return (
     <Container maxW="100%">
       <Grid
@@ -57,4 +44,3 @@ export const SingleUser = (props) => {
     </Container>
   );
 };
-// export default SingleUser

@@ -3,7 +3,7 @@ import {useContext, useEffect, useState} from "react";
 import {NavLink, useNavigate} from "react-router-dom";
 
 import {authenticateLogin} from "../API/signupAPI";
-import { ContextAuth } from "../AuthContextProvider.jsx/AuthContextProvider";
+import {ContextAuth} from "../AuthContextProvider.jsx/AuthContextProvider";
 import {AuthContext} from "../GlobalContext/AuthContext";
 
 const LoginPageNav = styled(Box)`
@@ -56,32 +56,34 @@ const Login = () => {
   let res, x;
   const loginUser = async () => {
     res = await authenticateLogin(login);
-    // x = res.data;
-    if (res.status === 200 && x !== "admin@chargebee.com") {
+    x = res.data;
+    if (res.status === 200 && x !== "admin@credbee.com") {
       handleAuthStatus({
         checkAuth: true,
         admin: false,
         user: true,
       });
-      
-      
+
+      localStorage.setItem("authStatus", authStatus.checkAuth);
+
       alert("Login Successful");
       navigate(`/user/${login.email}`);
     }
-    if (x === "admin@chargebee.com") {
+    if (x === "admin@credbee.com") {
       // setStatus(true)
       handleAuthStatus({
         checkAuth: true,
         admin: true,
         user: false,
       });
+      localStorage.setItem("authStatus", authStatus.checkAuth);
+
       navigate("/admin");
     }
     setLogin(loginInit);
   };
-  
-  localStorage.setItem("authStatus", authStatus.checkAuth)
-  console.log(authStatus)
+
+  // console.log(authStatus)
 
   return (
     <Box style={{background: "#EAEAF4", height: "700px"}}>

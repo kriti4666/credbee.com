@@ -12,14 +12,20 @@ import {
   MenuItem,
   MenuList,
 } from "@chakra-ui/react";
-import { AuthContext } from "../GlobalContext/AuthContext";
-import { ContextAuth } from "../AuthContextProvider.jsx/AuthContextProvider";
+// import { AuthContext } from "../GlobalContext/AuthContext";
+// import { ContextAuth } from "../AuthContextProvider.jsx/AuthContextProvider";
 import { LOGO } from "../LOGO/LOGO";
+import { useEffect } from "react";
+import { useState } from "react";
 
 export function Navbar() {
+  const [authStatus,setAuth] = useState(false)
   // const { authStatus, handleAuthStatus } = useContext(ContextAuth);
-  let authStatus = localStorage.getItem("authStatus");
-  console.log(authStatus);
+  useEffect(()=>{
+    const statee = localStorage.getItem("authStatus");
+    setAuth(statee)
+  },[])
+  // console.log(authStatus);
   return (
     <div className="NavbarDiv">
       <div className="firstHalf">
@@ -122,8 +128,8 @@ export function Navbar() {
             <span>English</span>
           </div>
           <div className="dropdown">
-            <span>
-              <Link to="/Login">{authStatus ? "Logout" : "Login"}</Link>
+            <span onClick={()=> localStorage.clear()}>
+              <Link to={authStatus?"/":"/Login"}>{authStatus ? "Logout" : "Login"}</Link>
             </span>
           </div>
           <div className="dropdown">

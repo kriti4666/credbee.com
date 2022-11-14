@@ -1,6 +1,6 @@
 import { Box, Typography, styled, TextField, Checkbox, FormGroup, FormControlLabel, Button, Grid } from "@mui/material"
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { authenticateSignup } from "../API/signupAPI";
 import {LOGO} from "../LOGO/LOGO"
@@ -58,7 +58,7 @@ const SignupInit = {
 
 
 const Signup = () => {
-
+    const navigate =useNavigate()
     const [signup, setSignup] = useState(SignupInit);
 
     const onInputChange = (e) => {
@@ -73,6 +73,7 @@ const Signup = () => {
         let res = await authenticateSignup(signup);
         // alert("Sucessful");
         setSignup(SignupInit)
+        navigate("/login")
     }
 
     return (

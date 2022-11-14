@@ -30,7 +30,9 @@ const User = () => {
 
   const getData = async () => {
     try {
-      const res = await axios.get(`http://localhost:8080/user/${param.email}`);
+      const res = await axios.get(
+        `https://credbee-backend.onrender.com/user/${param.email}`
+      );
       setData(res.data);
       setLoading(true);
     } catch (e) {

@@ -18,7 +18,6 @@ import {useEffect} from "react";
 import {useState} from "react";
 import {LoadSkeleton} from "./LoadSkeleton";
 import {SingleUser} from "./SingleUser";
-import {usersData} from "./user";
 import axios from "axios";
 
 const Admin = () => {
@@ -29,7 +28,7 @@ const Admin = () => {
   const [inputTag, setInputTag] = useState("");
 
   const handleSearch = () => {
-    const serched = allData.filter((ele) => ele.name.includes(inputTag));
+    const serched = allData.filter((ele) => ele.name.toLowerCase().includes(inputTag.toLowerCase()));
     setState(serched);
   };
 
@@ -67,7 +66,7 @@ const Admin = () => {
 
   const getData = async () => {
     try {
-      const res = await axios.get("http://localhost:8080/admin");
+      const res = await axios.get("https://credbee-backend.onrender.com/admin");
       const data = res.data.filter((ele) => ele.plan);
       console.log(data);
       setAllData(data);
