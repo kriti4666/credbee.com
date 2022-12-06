@@ -8,13 +8,13 @@
 <h3> We built it in 7days with the team of 5 collaborators.</h3>
 
 <h3> Some features of our Projects-</h3>
-<ul>
-  <li>1)Login/sign-up functionality.</li>
-  <li>2)A Navbar section that contain buttons for login/signup,hamburger menu.</li>
-  <li>3)Navbar contains 6 section Products, Pricing, Solution, Customers, Resources, Partners.</li>
-  <li>4)Fully responsive website.</li>
-  <li>5)User friendly easy and secure subscription plan payment System.</li>
-</ul>
+<ol>
+  <li>Login/sign-up functionality.</li>
+  <li>A Navbar section that contain buttons for login/signup,hamburger menu.</li>
+  <li>Navbar contains 6 section Products, Pricing, Solution, Customers, Resources, Partners.</li>
+  <li>Fully responsive website.</li>
+  <li>User friendly easy and secure subscription plan payment System.</li>
+</ol>
 
 <p>Tech stack used :</p>
 <ul>
